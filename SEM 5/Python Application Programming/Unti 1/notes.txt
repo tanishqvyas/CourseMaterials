@@ -1,0 +1,41 @@
+print('{} {}'.format(variable1, variable2))
+
+
+# Analogus stuff
+Classname.class_func(resp_class_obj)
+resp_class_obj.class_func()
+
+# Printing namespace of classs obj
+print(class_obj.__dict__)
+
+
+# Class methods
+# we use 'cls' just like self
+
+@classmethod
+def set_rasie_amt(cls, amount):
+	cls.rasise_amount = amount
+
+
+# Static methods
+
+@staticmethod
+def is_first_workday(day_name):
+	if(day_name == "monday"):
+		return True
+	else:
+		False
+
+
+
+
+#### INHERITANCE ####
+ 
+# isinstance(obj, class_name)
+# issubclass(class, other_class)
+
+# Special magic dunder methods
+
+__init__()
+__repr__()
+__str__()

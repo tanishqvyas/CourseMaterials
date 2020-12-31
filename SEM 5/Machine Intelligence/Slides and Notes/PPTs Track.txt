@@ -1,0 +1,42 @@
+################################ Unit 1 ###########################################
+
+1. Introduction to AI and ML									: Done
+2. Agent and its types											: Done
+3. Machine learning and its models								: Done
+4. Problem Solving by Searching - Uninformed Searching 			: Done
+5. Problem solving by Searching- Informed Searching 			: Done
+6. Perspectives and Issues, designing learning systems			: <NOT-FOUND>
+7. Concepts of hypotheses, Version space, inductive bias		: Done
+8.  Performance metrics-accuracy, precision, recall, 
+	sensitivity, specificity, AUC, RoC							: Done
+9. Decision Trees- Basic algorithm (ID3)						: Done
+10. Hypothesis search and Inductive bias, 
+	Entropy and Gain calculations								: Done
+11. Issues in Decision Tree Learning ? Overfitting				: Done
+12. Solutions to overfitting, Dealing with continuous values	: Done
+
+
+
+
+################################ Unit 2 ###########################################
+
+1. Instance-based learning: k-nearest neighbor Learning 		: Done
+2. Weighted KNN													: Done
+3. Issues with KNN ? discussion									: Done
+4. Perceptron													: Done	
+5. Multi-layer networks and back-propagation					: Done
+6. Activation Units ? discussion								: Done
+7. 
+
+
+
+################################ Unit 3 ###########################################
+
+1. Improving performance: Bagging and Boosting					: Done
+2. Adaboost - combining weak learners							: Done
+3. Bayesian Learning : Bayes theorem, Concept Learning 			: done
+4. Maximum likelihood, Bayes optimal classifier					: <TO-DO>
+5. Naïve Bayes classifier and text classification.				: <To-DO>
+6. Expectation Maximization algorithm 							: <To-Do>
+7. Expectation Maximization algorithm-part 2 					: <To-Do>
+8. Gaussian Mixture models 										: 

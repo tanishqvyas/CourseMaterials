@@ -1,0 +1,8 @@
+we make use of backslash in order to escape characters which have special meaning	
+
+
+.   = Means everything
+
+[]  = character Set
+
+Back references to match n extract data from groups

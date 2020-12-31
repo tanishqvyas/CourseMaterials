@@ -1,0 +1,11 @@
+In order to execute the program type
+
+1) make -f makefile.mk
+
+This command creates the required executable .out file
+
+2) ./a.out
+
+
+
+This completes the execution of the program successfully in Linux environment.
