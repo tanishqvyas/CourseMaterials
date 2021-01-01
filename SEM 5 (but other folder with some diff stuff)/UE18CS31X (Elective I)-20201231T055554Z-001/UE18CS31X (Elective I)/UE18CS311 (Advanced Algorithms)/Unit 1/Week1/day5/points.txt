@@ -1,0 +1,159 @@
+1. check whether a given integer (assume that this is stored in an unsigned int or long of
+the implementation) is an exact power of 2.
+   easy: linear in terms of # of bits
+   difficult : const time
+   
+2. find the number neither the smallest nor the biggest
+
+3. size of a matrix
+-----------------
+  
+Master Theorem:
+	relook
+	problems
+
+recurrence trees:
+	relook
+		
+substitution method:
+	some more problems
+	
+brief intro to amortized complexity
+--------------------------
+
+T(n) = aT(n/b) + O(n^d)
+T(1) = small constant
+
+a >= 1
+b > 1
+O(n ^d) : polynomial in n; highest power with a non zero coefficient d
+assume n is an exact power of b
+
+a/ b^d
+a: prolificaton of # of subproblems
+b : factor by which the problem size decreases
+b ^ d : factor by which the work decreases as the problem size decreases
+
+a = b^d 
+
+n = k^b for some k, n/k^b becomes 1
+what is that value of k?
+log(n, b) = k
+At the leaf level, the # of leaves a ^(log(n, b))
+
+--------------------
+a = b^d : implication: work done is uniform at each level : O(n^d log(n, b))
+	can we say : O(n^d log(n)) ? can we ignore the base ?
+
+a < b^d : implication: work is done at the root level : O(n^d)
+
+a > b^d : implication : work is done at the leaf level 
+		O(a ^(log(n, b))
+		O(n ^ (log(a, b))
+
+log(n, b) : ht of the tree
+a ^ level # : # of nodes at this level
+a ^ log(n, b) : # of leaves
+-----------------------------
+
+T(n) = 2T(n/2) + O(n)
+T(n) = 2T(n/2) + n
+a = 2; b = 2; d = 1
+a == b^d
+O(nlog(n, 2))
+
+--------------------------------------------
+T(n) = T(n/2) + 1
+a = 1; b = 2; d = 0
+a == b^d
+O(log(n, 2))
+-------------------------------------------
+multiplication of matrix
+T(n) = 8T(n/2) + O(n^2)
+a = 8; b = 2; d  = 2
+a > b^d
+O(n^(log(8, 2)) = O(n^3)
+------------------------
+multiplication of matrix (Strassen's Algorithm)
+T(n) = 7T(n/2) + O(n^2)
+a = 7; b = 2; d  = 2
+a > b^d
+O(n^(log(7, 2))
+-------------------------
+ 
+T(n) = 4T(n/2) + O(n^2)
+a = 4; b = 2; d = 2
+a == b^d
+O(n^2log(4, 2))
+O(n^2)
+
+------------------------
+ 
+T(n) = 3T(n/2) + O(n^2)
+a = 3; b = 2; d = 2
+a < b^d
+O(n^2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

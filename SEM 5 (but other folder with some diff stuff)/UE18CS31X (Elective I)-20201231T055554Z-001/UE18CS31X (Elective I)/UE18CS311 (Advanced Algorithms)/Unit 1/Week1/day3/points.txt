@@ -1,0 +1,32 @@
+1. given a long sequence of 0 and 1, find where the first 1 occurs.
+   length is not known.
+   length cannot be computed
+   can you use some technique like binary search?
+   O(log n) algo?
+
+2. given a sequence sorted and repeated elements, find the leftmost occurrence of a key.
+   extend to find the range of elements with a given key. equal_range
+   
+3. given a matrix (M X N) with elements are arranged in order rowwise as well as column,
+   search for an element
+   
+   
+O(log(n, 2)) or O(log(n, 3))
+O(2^log(n, 2)) or O(2^log(n, 3))
+
+complexity:
+is c : real or integer
+should c be positive
+can that be 0
+can that be negative
+
+is n real or integer
+can n be 0
+can n be negative
+
+little theta?
+
+
+
+
+

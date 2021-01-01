@@ -1,0 +1,8 @@
+X-DSPAM-Confidence: 0.8475
+from a@gmail.com
+X-DSPAM-Confidence: 0.8999
+from a@gmail.com
+X-DSPAM-Confidence: 0.6178
+from a@gmail.com
+X-DSPAM-Confidence: 0.5403
+from a@gmail.com

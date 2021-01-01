@@ -1,0 +1,6 @@
+Python Application Programming (UE18CS306B): Marking Scheme
+ISA-1: test for 30 marks --> reduced to 12 marks
+ISA-2: test for 20 marks --> reduced to 8 marks
+Assignment: 5 marks (This may be a quiz or a mini-project as well)
+ESA: 50 marks --> reduced to 25 marks
+(Note: If you do not write ISA's, then those weightage of marks will be added to ESA's weightage)
