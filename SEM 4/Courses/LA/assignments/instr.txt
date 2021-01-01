@@ -1,0 +1,10 @@
+This Mail is regarding the completion of Linear Algebra Sci-Lab assignment. The list of assignments to be completed are as follows.
+- The Gram-Schmidt Orthogonalization
+- Eigen values and Eigen Vectors of a Matrix
+- Projections by Least Squares
+- The Largest Eigen Value of a Matrix by the Power Method. 
+
+
+Complete the above assignments and prepare document of the 9 programs which are part of your assignment.
+
+Template of the Document is attached. Keep the document ready. I will shortly share the mode of submission

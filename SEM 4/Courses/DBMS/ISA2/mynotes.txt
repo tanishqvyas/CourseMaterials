@@ -1,0 +1,29 @@
+Switch over to the postgres account on your server by typing:  sudo -i -u postgres
+
+You can now access a Postgres prompt immediately by typing:  psql
+
+Exit out of the PostgreSQL prompt by typing:  \q
+
+Accessing a Postgres Prompt Without Switching Accounts :  sudo -u postgres psql
+
+
+PostgreSQL is ORDBMS
+ORDBMS : An object relational database management system (ORDBMS) is a database management system with that is similar to a relational database, except that it has an object-oriented database model. This system supports objects, classes and inheritance in database schemas and query language
+
+**Fucking use semicolon in the end of the sql commands**
+
+1. List all the databases you have :  \l
+
+2. Create a database : CREATE DATABASE dbname;  (note : case insensitive)
+
+3. Connect to a Database : \c dbname
+
+4. List all the tables : \d
+
+5. Delete a Database : DROP DATABASE dbname;
+
+6. Create table : CREATE TABLE tbname(col datatype constraints );
+
+7. List specific table details : \d tbname
+
+8. 

@@ -1,0 +1,41 @@
+Unit III + IV ==> 17 hours scheduled in calendar
+Lesson plan ==> 18 hourse (Database programming is optional)
+
+Chapter - 6:
+
+1> create database
+2> create schema
+3> data types - numeric, char, varchar, BLOB, CLOB, date, time, timestamp, create type(for composite), create domain (for type with constraints)
+4> create table
+5> constraints - Not Null, default, unique, Primary key, foreign key, check, FKey - modifiers - cascade, set null, set default
+6> Basic select with single/multiple input table and with/without where clause.
+7> renaming, aliasing
+8> duplicate elimination - all or distinct
+9> union, intersect, except (set difference)
+10> pattern matching - like, %, _
+11> order by
+12> insert, delete, update
+
+Chapter - 7:
+More SQL
+
+1> Is Null, Is not null
+2> nested query - in, =, any/all, exists,
+3> Join - natural, outer joins ==> left, right, full
+4> aggregate - count,max, min,sum, avg
+5> Group by, having
+6> Assertions, triggers
+7> with, case 
+8> Views, with check option
+9> alter table - add/drop column, add/drop constraint
+
+WITH BIGDEPTS (Dno) AS
+( SELECT Dno
+FROM EMPLOYEE
+GROUP BY Dno
+HAVING COUNT (*) > 2)
+SELECT e.Dno, COUNT (*)
+FROM EMPLOYEE e, BIGDEPTS bd
+WHERE Salary>40000 AND e.Dno IN BIGDEPTS
+GROUP BY e.Dno;
+

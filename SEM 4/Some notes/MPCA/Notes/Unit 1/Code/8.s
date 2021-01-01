@@ -1,0 +1,8 @@
+.text
+MOV R0, #10
+MOV R1, #10
+CMP R0,R1
+MOVEQ R2,R1
+MOVCS R3,R2
+ADDEQ R4, R2,#5
+.end
