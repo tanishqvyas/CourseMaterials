@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+		
+			var arr=new Array("5");//Creates an array of length 1 with "5" at index 0
+			console.log(arr.length);
+			console.log(arr[0]);
+			arr.length=500; //Array length is a property that can be reassigned
+			console.log(arr.length)
+			arr[250]="test" //Places "test" at index 250
+			console.log(arr.length);//length is 251
+			arr.length=100
+			
+			var arr2=[1,2,"3",4,5];
+			console.log(arr2.join(":"));//String representation of array separated by :
+			console.log(arr2.toString());
+			console.log(arr2.reverse());
+			console.log(arr2.toString());
+			console.log(arr2.sort());
+			console.log(arr2.toString());
+			console.log(arr.concat(arr2))
+			console.log("concatted"+arr.toString())
+			console.log("concat"+arr2.toString())
+			console.log(arr2.slice(2,4));
+			console.log("after slice"+arr2.toString())
+			console.log(arr2.pop())
+			console.log(arr2.toString())
+			console.log(arr2.push(17))
+			console.log(arr2.toString())
+			console.log(arr2.shift())
+			console.log(arr2.toString())
+			console.log(arr2.unshift(45))
+			console.log(arr2.toString())
+			console.log(arr2.sort())
+			console.log(arr2.toString())
+			//Two dimensional arrays
+			var k=0;
+			var arr=new Array(new Array(5),new Array(7),new Array(3));
+			console.log(arr[2].length)
+			for(var i=0;i<arr.length;i++)
+			{    console.log(i)
+			    console.log(arr[2].length)
+			
+				for(var j=0;j<arr[i].length;j++)
+				{
+					arr[i][j]=k++;		
+				
+				}
+			
+			
+			}
+			for(var i=0;i<arr.length;i++)
+			{
+				for(var j=0;j<arr[i].length;j++)
+				{
+					console.log(arr[i][j]);
+				
+				}
+			}
+				
+		</script>
+	
+	</head>
+	<body>
+	</body>
+
+
+
+</html>

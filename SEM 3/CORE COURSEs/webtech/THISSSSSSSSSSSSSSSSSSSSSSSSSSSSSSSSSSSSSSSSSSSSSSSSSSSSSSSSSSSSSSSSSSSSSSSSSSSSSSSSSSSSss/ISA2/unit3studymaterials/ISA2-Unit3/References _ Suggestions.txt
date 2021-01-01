@@ -1,0 +1,5 @@
+Ref: Timers is from the Kirupa Textbook
+Synthetic events is from https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events
+
+Timers need to be covered thoroughly. You may want to show a small animation example for students to understand timers.
+Synthetic events one simple example explained from slides should suffice

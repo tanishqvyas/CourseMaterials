@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<button id="btn1" onclick="test1(this,event)">Button 1</button>
+		<button id="btn2">Button 2</button>
+		<button id="btn3">Button 3</button>
+	</body>
+	<script>  
+	btn1=document.getElementById("btn1");
+	btn1.onclick=test2;//Traditinal Model
+	btn2.addEventListener("click",test2,false);//W3C Model
+	function test2(e){
+		console.log(this);
+		console.log(e);//e is the event object
+	}
+	function test3(e){
+		console.log(this);
+		console.log(e);//e is the event object.
+	}
+	function test1(a,b){
+			console.log(a);  //a is 'this' 
+			console.log(b);  //b i sthe vent object
+	
+	}
+	
+	</script>
+</html>

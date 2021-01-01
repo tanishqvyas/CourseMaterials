@@ -1,0 +1,11 @@
+<script>
+var event = new CustomEvent('build', { detail: elem.dataset.time });
+
+
+
+//This will then allow you to access the additional data in the event listener:
+
+function eventHandler(e) {
+  console.log('The time is: ' + e.detail);
+}
+</script>

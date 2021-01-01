@@ -1,0 +1,5 @@
+Hands on exercise using HTML and CSS
+
+span and div
+Inline elements, Block Elelments, Box Model
+positioning

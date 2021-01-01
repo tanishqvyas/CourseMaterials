@@ -1,0 +1,55 @@
+<html>
+   <head>
+      
+      <script type = "text/javascript">
+         <!--
+            function WriteCookie()
+            {
+               if( document.myform.customer.value == "" ) {
+                  alert("Enter some value!");
+                  return;
+               }
+             
+               var now = new Date();
+               now.setMinutes( now.getMinutes() + 1 );
+			   
+               cookievalue = document.myform.customer.value+";"
+			   alert(cookievalue)
+              /* document.cookie = "name=" + cookievalue+"; expires=" + now.toUTCString() + ";"*/
+			   document.cookie = "name=" + cookievalue
+			   //console.log(document.cookie)
+               document.cookie += "; expires=" + now.toUTCString() + ";"
+               document.write ("Setting Cookies : " + "name=" + cookievalue );
+            }
+         //-->
+         function ReadCookie()
+            {
+				console.log(document.cookie)
+               var allcookies = document.cookie;
+               document.write ("All Cookies : " + allcookies );
+               console.log((new Date()).toUTCString());
+               // Get all the cookies pairs in an array
+               cookiearray = allcookies.split(';');
+               
+               // Now take key value pair out of this array
+               for(var i=0; i<cookiearray.length; i++) {
+                  name = cookiearray[i].split('=')[0];
+                  value = cookiearray[i].split('=')[1];
+                  document.write ("Key is : " + name + " and Value is : " + value);
+               }
+            }
+         //-->
+      </script>
+      
+   </head>
+   
+   <body>
+   
+      <form name = "myform" action = "">
+         Enter name: <input type = "text" name = "customer"/>
+         <input type = "button" value = "Set Cookie" onclick = "WriteCookie();"/>
+         <input type = "button" value = "Get Cookie" onclick = "ReadCookie()"/>
+      </form>
+   
+   </body>
+</html>

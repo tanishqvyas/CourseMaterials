@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<input type="button"  id="btn1"/>
+	</body>
+	<script>
+			function synEvent(){
+				//var ev=new Event("xyz");
+				var ev=new CustomEvent("xyz",{detail:{name:'myevent'}});
+				btn1=document.getElementById("btn1");
+				btn1.addEventListener("xyz",test,false);
+				btn1.dispatchEvent(ev);
+				
+			
+			}
+			function test(e){
+				console.log("event dispatched")
+				console.log(e.detail.name )
+			}
+			synEvent();
+	</script>	
+
+
+
+</html>

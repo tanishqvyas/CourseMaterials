@@ -1,0 +1,40 @@
+Profile a graph for the following properties.
+1. What is average degree of a vertex in the graph?
+2. Is the graph a regular graph?
+3. Is the graph a complete graph?
+4. Is the graph a cycle graph?
+5. Is the graph a path graph but not a cycle graph?
+6. Does the graph has an Euler circuit?
+7. Does the graph has an Euler path but not an Euler circuit?
+8. Does the graph satisfy the sufficient condition of the Ore's theorem?
+
+Input constraints:
+1. Graph is connected 
+2. Graph is undirected
+3. Graph is unweighted
+4. Graph has at least 3 vertices and upmost 100 vertices
+5. No self loops and no parallel edges
+6. A testcase must complete within 1 second of time
+7. Graph input is a 0/1 matrix
+
+What is the assignment?
+Rename the file PES1201800000.c with your SRN. 
+Implement the functions in the file.
+Rename the file PES1201800000.txt with your SRN.
+In PES1201800000.txt, type in the explanation of the logic you have used to implement the functions.
+Submit only the files PES1201800000.c and PES1201800000.txt through the Google Form.
+
+Due Date/Time:
+Not later than 23:59 hours on Friday 22nd of November, 2019.
+
+Submit at:
+https://forms.gle/NbxK12dNNVQfiMLp8
+Only one submission, no re-submits.
+Both the c file and txt file (report) should be submitted in one shot.
+
+Assessment:
+8 marks for the implementation of the functions.
+2 marks for the report.
+Plagiarism leads to zero marks.
+Compilation errors and runtime errors leads to zero marks.
+Printing anything in the function implementations leads to wrong answers.

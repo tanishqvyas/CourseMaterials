@@ -1,0 +1,24 @@
+<html>
+<head>
+<title> Time in seconds </title>
+
+
+<script type = "text/javascript">
+var seconds = 0;
+function startTimer()
+{
+//var seconds=0;
+window.setInterval("updateTime()", 1000);
+}
+
+function updateTime()
+{
+++seconds;
+document.getElementById("new").innerHTML= seconds;
+}
+</script>
+</head>
+<body onload = startTimer()>
+<p id ="new">0</p>
+ </body>
+</html>

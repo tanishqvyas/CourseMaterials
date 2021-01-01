@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+<meta content="sea otter, kid, stuff" name="keywords">
+<meta content="Sometimes, sea otters are awesome!" name="description">
+<title>LOL! Sea Otter! Little Kid!</title>
+<link href="foo.css" rel="stylesheet"> 
+
+</head>
+  
+<body>
+<div id="container">
+    <img name="sea" src="seaOtter.png" height="250px" />
+    <h1 id="otter">What This Sea Otter Did to This Little Kid Will Make You LOL!</h1>
+    <p class="bodyText">
+        Nulla tristique, justo eget semper viverra, massa arcu congue tortor,</p> 
+     <p class="bodyText">   ut vehicula urna mi in lorem. Quisque aliquam molestie dui, at </p> 
+       <p class="bodyText">  turpis porttitor nec. Aenean id interdum urna. Curabitur mi </p>
+       <p class="bodyText">  ligula, hendrerit at semper sed, feugiat a nisi.</p>
+      <p>I dont want to be selcted</p>
+	<div class="submitButton">
+        next
+    </div>
+	<button onClick="modify()">Click Here</button>
+	
+</div>
+ 
+<script>
+	function modify(){
+		var heading=document.getElementById("otter");
+		//heading.style.color="blue"
+		var con=document.getElementById("container");
+		var newElement=document.createElement("h2");
+		newElement.innerHTML="I am a new Element"
+		//document.body.appendChild(newElement);
+		con.insertBefore(newElement,heading);
+		
+		
+		
+		//heading.textContent="This <b>is</b> all changing"
+		//heading.innerHTML="This <b><i>is</i></b> all changing"
+		
+		//var im=document.querySelector("img");
+		//alert(im.getAttribute("src"));
+		//im.setAttribute("src","web.jpg")
+		//im.src="web.jpg"
+		//var con=document.getElementById("container");
+		//alert(con.id);
+		
+	}
+	
+	
+	
+	/*var heading=document.getElementById("otter");
+	console.log(heading);
+	var paras=document.getElementsByTagName("p");
+	console.log(paras);//Iterate through the array
+	var sea=document.getElementsByName("sea")
+	console.log(sea);*/
+	/*var element=document.querySelector("p");
+	console.log(element)*/
+	
+	var element=document.querySelectorAll("p");
+	console.log(element)
+	var e=document.querySelectorAll("p.bodyText");
+	console.log(e)
+
+</script>
+</body>
+</html>

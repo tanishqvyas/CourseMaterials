@@ -1,0 +1,35 @@
+<div>
+    Key: <input type="text" id="key" /> </br>
+</div>
+<div>
+    Value: <input type="text" id="value" /> <br />
+</div>
+<div>
+    Action:
+    <select id="action">
+        <option value="set">Set</option>
+        <option value="get">Get</option>
+        <option value="delete">Delete</option>
+        <option value="clear">Clear All</option>
+    </select>
+</div>
+<div>
+    <button id="submit">Action!</button>
+</div>
+<script>
+    document.getElementById("submit").addEventListener("click", () => {
+        var key = document.getElementById("key").value;
+        var value = document.getElementById("value").value;
+        var action = document.getElementById("action").value;
+
+        if (action == 'get') {
+            console.log(localStorage.getItem(key));
+        } else if (action == 'set') {
+            console.log(localStorage.setItem(key, value));
+        } else if (action == 'delete') {
+            console.log(localStorage.removeItem(key));
+        } else if (action == 'clear') {
+            console.log(localStorage.clear());
+        }
+    });
+</script>

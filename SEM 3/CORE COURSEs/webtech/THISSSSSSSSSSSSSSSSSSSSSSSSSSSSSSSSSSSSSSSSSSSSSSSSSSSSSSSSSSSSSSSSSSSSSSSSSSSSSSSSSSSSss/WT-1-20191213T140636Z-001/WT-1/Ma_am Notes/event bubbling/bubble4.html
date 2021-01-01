@@ -1,0 +1,25 @@
+<html>
+<head>
+<title> event bubbling</title>
+</head>
+<body>
+<div id = "parent"> 
+<button id ="parent1">parent1
+<button id = "child">child
+</button>
+</button>
+</div>
+<script>
+var parent = document.querySelector("#parent")
+parent.addEventListener("click", function(){ 
+console.log("parent clicked")});
+var parent1 = document.querySelector("#parent1")
+parent1.addEventListener("click",function(){
+console.log("parent1 clicked")});
+
+var child =document.querySelector("#child")
+child.addEventListener("click",function() {
+ console.log("child clicked")});
+</script>
+</body>
+</html>

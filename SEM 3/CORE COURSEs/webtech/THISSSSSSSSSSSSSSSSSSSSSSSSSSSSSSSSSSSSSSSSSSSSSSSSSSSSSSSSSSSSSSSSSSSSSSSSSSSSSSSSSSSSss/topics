@@ -1,0 +1,547 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Event HANDLING
+
+
+//Listening for an event
+traditional, w3c model
+
+//cancelling bubbling phase because by default its in bubbling phase : make 3rd argument as true
+for capturing phase true : comes from out to in i.e. from root to element
+vice cersa for bubbling
+document.addEventListner("click",color,false);
+
+
+or
+
+use
+event.cancelBubble = True
+
+
+//Reacting to an event
+
+
+
+
+onclick
+onfocus
+onblur
+onsubmit
+onreset
+onload
+
+<input type="text" onfocus="dofocus()" id="textme">
+
+<script>
+
+function dofocus()
+{
+	document.getElementById("textme").style.backgroundColor="yellow";
+}
+
+</script>
+
+
+
+
+
+//event
+inline model
+w3c model
+
+
+addEventListner(listeningForEvent basically any event, reaction event handler, boolean)
+
+true : capturing phase
+false : Bubbling phase (default)
+
+<script>
+
+document.addEventListner("click",color,false);
+
+function color()
+{
+	document.style.backgroundColor = "yellow";
+}
+
+
+</script>
+
+
+
+//onmouseover
+//onmouseout
+//onmousemove
+
+clientX clientY
+
+screenX screenY
+
+
+function myFucntion()
+{
+	var x = event.clientX;
+	var y = event.clientY;
+	var coor = "Co-ordinates " + x ", "+y);
+
+	document.getElementById("para-id").inerHTML = coor;
+}
+
+
+Event object properties
+contextmenu
+preventDefault()
+altKey
+keyCode
+cancelBubble
+clientx clienty
+shiftKey
+type
+
+event.keyCode
+
+keydown
+keypress
+keyup
+
+// 3 parameter in w3c model event, event handler, boolean=false by default
+
+
+
+function funname(event)
+{
+	console.log(event);
+	console.log("maal", + event.keyCode);
+	console.log("maal", + event.shiftKey);
+	console.log("maal", + event.shiftKey);
+
+}
+
+
+window & document obj
+
+Timer events all are in window object
+
+# setTimeout(function, milliseconds)
+# setInterval(function, milliseconds)
+# clearInterval
+
+<button onclick="myvar = setTimeout(funcname, 3000)">click</button>
+
+function funcname()
+{
+	alert("maal")
+}
+
+this code alerts maal after waiting for 3000 secs from the button being clicked
+
+
+
+<button onclick="myvar = setInterval(funcname, 3000)">click</button>
+
+this displays alert again and again after the interval of 3000 millisecs
+
+
+make use of date object if u wanna do something with the date
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+W.A.S to continuously print the msg hello world with varying delays, start with a delay of one sec then increnment the delay by 1 sec each time
+
+expected output will be hello world 1  hello world 2   hello world 3
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+// event bubbling
+
+
+body
+
+	one_a
+
+		two
+
+			three_a
+			three_b
+
+	one_b
+
+
+
+
+
+
+SYNTHETIC EVENTS : basically we are going to create our own events. We use synthetic events cause it can support multiple plugins
+
+Steps :
+
+1. create ur own event
+
+It is created by using a cnstructor called event.
+
+var ev = new Event("eventName");
+
+
+2. listem evnet
+
+element.addEventListner("eventName", funcToBeCalledAsHandler, false); // bubbling phase
+
+
+3. dispatch an event
+
+element.dispatchEvent(ev) 
+
+function funcToBeCalledAsHandler()
+{
+	alert("coustom event");
+}
+Then the corresponding fucntion will be called
+
+
+
+Example program
+
+<body>
+
+<input type="button" id="demo"/>
+
+<script>
+
+	function wrap()
+	{
+		var ev = new Event("myEvent")
+
+		btn = getElementById("demo")
+
+		btn.addEventListener("myEvent", func1, false)
+
+		btn.dispatchEvent(ev);
+	}
+
+	fucntion func1()
+	{
+		alert("coustom event");
+	}
+
+	wrap();
+
+</script>
+
+</body>
+
+
+Now to coustomize ur shitty ass event
+
+var ev = new CustomEvent("eventName",
+			{
+				details:{
+				name:maal
+				}
+
+
+			})
+
+
+console.log(ev.details.name) // this can be used to access stuff inside the func
+
+
+
+COOKIES
+
+1. Storing or writing a cookie
+2. Readind cokie
+3. setting expiry date
+4. Deleting cookie
+
+cookies come in document object : document.cookie
+
+- In order to store in the cookie we use key-value pairs
+- Split key-value
+- to delete a cookie : set expiry date to the past date
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//lagan lagi tum se//basic
+
+function funcname()
+{
+	var x =5;
+	console.log(x);
+}
+funcname();
+
+
+//Example for passing parameters
+function funadd(a,b)
+{
+	var c = a+b;
+	console.log(c);
+}
+
+funadd(1,2);
+
+//Passing variable num of arguments
+
+function fun(a,b)
+{
+	//some code
+}
+
+fun(1,2,3,4,5); //this call wont result in error. It just takes the first 2 parameters
+fun(1);			//This also wont throw any error, b will be assigned to undefined
+
+
+
+//Function hoisting in Js
+
+funadd(3,4);  //function hoisting takes place and value 7 is printed
+
+function funname(a,b)
+{
+	var c = a+b;
+	console.log(c);
+}
+
+
+//Next topic of today :
+
+
+Functions :
+	
+	~ Declaring & defining
+	~ Function expression
+
+
+//Example 1
+
+var funname = function(a,b)
+{
+	return a+b;
+}
+
+console.log( funname(1,2) );
+
+
+
+
+//Scope of variables 
+
+	~ local
+	~ global
+	~ function scope
+	~ Block scope
+
+
+function fun()
+{
+	if(true)
+	{
+		var a = "apple";
+		let b = "banana";
+		const c = "grape";
+	}
+}
+
+//test for scopes in these examples
+
+
+
+
+//Js objects
+
+objects
+	~ Properties
+	~ methods
+
+
+//How to create, call, display obj??
+
+//string and math functions
+
+- toString()
+- toExponential()
+- toPrecision()
+- toFixed()
+- valueof()
+
+//Math module and string module
+
+
+// var d =new Date();
+
+getDate()
+getMonth()
+getDay()
+getFullyear()
+getTime()
+getHours()
+getSeconds()
+getMinutes()
+getMiliseconds()
+
+//list and array operations
+
+//
+var arrayName = ['hello','world']
+
+or
+
+var arrayName = new Array(10);
+
+push, pop, shift, unshift
+
+Screen inputs and keyboard outputs
+Javascript builtin objects
+Javascript builtin objects
+Accessing and Modifying DOM
+
+
+# Two-dimensional arrrays
+
+
+
+
+Screen output & keyboard input
+
+1. alert() // displays a popup window
+2.prompt() //prompts user for input
+3. confirm()
+
+name = prompt("Daal bhai yahan info","")
+
+
+
+/////////////Object >> window(global) and document
+
+alert, prompt, confirm all of em come under window object
+
+webpage comes under document object
+
+
+
+									window
+									  |
+									  |
+									  |
+								   Document
+								   	  |
+								   	  |
+								   	  |
+								   	html
+								   	  |
+							   _______|________
+							  |				  |
+							head			 body-----------------
+							  |               |					 |		  
+							  |               |                  |
+							title             h1				 p
+							  |               |                  |
+							 text           text               text, link
+
+
+
+Reading the DOM / Querying the DOM
+
+- document.getElementById
+	Returns one element. Since its an advisable thing to have unique Id hence there wont be any error, but if more than one element have same id then the first element with matching id is returned
+
+- document.getElementsByClassname
+	Returns list or collection of elements. List of all the tags/div with same class-id. To acces a specific tag outta all the elements out of the list then we have to use index
+
+- document.getElementByTagname
+	Returns list or collection of elements i.e. List of all the tags. To acces a specific tag outta al the elements out of the list then we have to use index
+
+- document.getElementsByName
+	Returns list or collection of elements. List of all the tags/div with same name. To acces a specific tag outta all the elements out of the list then we have to use index
+
+- document.querySelector
+
+	To fetch id we use query selector by passing id ("#idname")
+
+
+- document.querySelectorAll
+
+
+
+
+
+
+
+
+
+
+Create element and append child in DOM
+
+
+ele.remove();
+demo.removeChild(para);
+ele.parentNode.removeChild(ele);

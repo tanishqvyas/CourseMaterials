@@ -1,0 +1,35 @@
+<html>
+   <head></head>
+      <body>
+         <input type = "button" value = "Set Cookie" onclick = "WriteCookie()"/>
+         <input type = "button" value = "Get Cookie" onclick = "ReadCookie()"/>
+       </body>
+      <script type = "text/javascript">
+         
+            function WriteCookie()
+            {
+               //console.log(document.cookie='username=Duke Martin');
+               
+			   console.log(decodeURIComponent(document.cookie='username=Duke Martin'))
+			   console.log(decodeURIComponent(document.cookie.length))
+			   }
+			   
+			   function ReadCookie()
+					{
+               if(document.cookie.length==0)
+			    {
+				
+				
+				  var array=document.cookie.split("=")
+				  alert("Name="+array[0]+""+"value="+array[1]);
+				}
+				
+				else alert("cookie not available")
+					}
+             
+               
+      </script>
+      
+   </html>
+   
+   

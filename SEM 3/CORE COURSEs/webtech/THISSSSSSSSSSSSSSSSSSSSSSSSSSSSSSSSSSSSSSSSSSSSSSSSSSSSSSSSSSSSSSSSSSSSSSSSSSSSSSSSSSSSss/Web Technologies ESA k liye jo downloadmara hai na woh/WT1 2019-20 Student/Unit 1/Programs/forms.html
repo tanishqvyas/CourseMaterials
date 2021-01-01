@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A review form</title>
+	</head>
+	<body>
+	<form action="rev.php" method="get"><!--method can also be equal to post-->
+	<!-- The HTML specifications technically define the difference between "GET" 
+	and "POST" so that former means that form data is to be encoded (by a browser) 
+	into a URL while the latter means that the form data is to appear within a message body. -->
+	<!--action specifies the name of a program or script that resides on server and 
+	will process the input sent by the user-->
+		<h1>Please review the movie</h1>
+		<label>Name<input type="text" name="myname"></label><br/>
+		<label>Age<input type="text" name="myage"></label><br/>
+		<!-- For grouping together checkboxes and radio buttons they must have common value for the 'name' attribute-->
+		<label>Watched
+		<input type="checkbox" name="watch" value="theater">theater</input>
+		<input type="checkbox" name="watch" value="home">home</input>
+		<input type="checkbox" name="watch" value="school">school</input>
+		<input type="checkbox" name="watch" value="lectures">lectures</input>
+		</label><br/>
+		<label>Times
+		<input type="radio" name="times" value="1">1</input>
+		<input type="radio" name="times" value="2">2</input>
+		<input type="radio" name="times" value="3">3</input>
+		<input type="radio" name="three" value="4">4</input><br/>
+		
+		<select name="rating" size="2" multiple>
+			<option value="g">Good</option>
+			<option value="vg">Very Good</option>
+			<option value="ex">Excellent</option>
+		</select><br/>
+		<textarea name="comm"> </textarea><br/>
+		<input type="submit"/><br/>
+		<h1>HTML5 Input Types</h1>
+			Email<input type="email"/><br/>
+			Number<input type="number"/><br/>
+			Range<input type="range" name="range" min="5" max="20"/><br/>
+			URL<input type="url"/><br/>
+			Color<input type="color"/><br/>
+			Search<input type="search"/><br/>
+			Date<input type="date"/><br/>
+			Month<input type="month"/><br/>
+			Time<input type="time"/><br/>
+			Week<input type="week"/><br/>
+			Date Time<input type="datetime-local"/><br/><!-- Datetime to be avoided-->
+		</label>
+	</form>	
+	</body>
+
+
+
+</html>

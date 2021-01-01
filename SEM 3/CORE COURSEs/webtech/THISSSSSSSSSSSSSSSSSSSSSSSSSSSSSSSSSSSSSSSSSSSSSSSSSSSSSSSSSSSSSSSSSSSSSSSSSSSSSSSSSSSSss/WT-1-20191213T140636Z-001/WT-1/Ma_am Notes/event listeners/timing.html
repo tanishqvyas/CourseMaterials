@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>checktime</title>
+</head>
+<script>
+function startTime()
+{
+var today = new Date()
+var h = today.getHours()
+var m = today.getMinutes()
+var s = today.getSeconds()
+
+document.getElementById("new").innerHTML = h+":"+m+":" + s
+setTimeout(startTime)
+}
+</script>
+<body onload = "startTime()">
+<p id="new">time start now</p>
+
+</body>
+</html>

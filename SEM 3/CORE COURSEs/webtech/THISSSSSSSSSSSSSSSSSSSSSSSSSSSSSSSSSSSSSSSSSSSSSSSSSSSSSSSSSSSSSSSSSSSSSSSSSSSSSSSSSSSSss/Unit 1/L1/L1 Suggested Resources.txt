@@ -1,0 +1,12 @@
+* To understand web hosting options please visit namecheap.com and explore the various options. 
+*Domain Name Resolution : http://blog.catchpoint.com/2014/07/01/dns-lookup-domain-name-ip-address/
+*Web Hosting vs Cloud Hosting
+https://www.cloudways.com/blog/cloud-vs-vps-hosting/
+* Suggestions
+-Discuss the difference between internet and web
+-Discuss how this course is a stepping stone for Web -II ,Web Services, Web Frameworks
+-Discuss how the web works 
+-Technical point of discussion should defintely include DNS
+- Watch the Harvard CS75 lecture to understand more about web hosting.
+https://www.youtube.com/watch?v=8KuO4r5CHjM
+

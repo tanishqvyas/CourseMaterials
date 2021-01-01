@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<style>
+		div{
+		 border:1px solid black;
+		 height:200px;
+		 width:300px;
+		 position:absolute;
+		 top:100px;
+		 left:200px;
+		}
+		textarea{
+		
+		margin:25px
+		}
+	</style>
+	</head>
+	
+	<body>
+		
+			Pick any color <input type="color" id="pick" onchange="change()">
+			
+			<div id="box">
+			<textarea rows="10" cols="30" id="ipText" placeholder="Please enter your text">
+			</textarea>
+			</div>
+			<script>
+				
+				window.onstorage=test;
+				alert(localStorage.getItem("color"))
+				if(localStorage.getItem("color")){
+					box.style.background=localStorage.getItem("color")
+				
+				}
+				function test(){
+					box.style.background=localStorage.getItem("color")
+				}
+				pick.oninput=change;
+				function change()
+				{
+				var col=document.getElementById("pick")
+				var box=document.getElementById("box")
+				box.style.background=col.value
+				localStorage.setItem("color",col.value);
+				}
+		</script>
+	</body>
+
+
+
+</html>

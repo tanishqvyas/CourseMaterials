@@ -1,0 +1,74 @@
+Unit 5
+
+types of mode of php
+
+1. copy mode
+2. interpret mode
+
+Before that tag we have copy mode
+when compiler finds <? php    tag it enters into interpret mode
+after ?> tag where php ends
+
+we come back to copy mode
+
+
+Data types
+
+1. scalar : integer, double, boolean, string
+2. composite : arrays, objects
+3. null & resource
+
+
+Example of including php files
+
+<?PHP include 'menu.php'
+?>
+
+
+Form processing methods
+
+GET, POST, REQUEST
+
+
+
+
+Allowing specific emails, character class se krenge
+
+
+
+
+
+cookie size is limited and we always need to communicate to server
+
+Unit 4
+
+Cookie(4kb) : storing, reading, expiry date, delete
+
+
+LOCAL STORAGE : (unit 2 ka maal)
+
+
+traditional, inline : onstorage is the evnet
+w3c : event will be storage
+
+
+
+window.onstorage = test();
+
+functuon test()
+{
+	var col = document.getElementById("box");
+	box.style.background = localStorage.getItem("color");
+}
+
+function change()
+{
+	var col = document.getElementById("pick");
+	var box = document.getElementById("box");
+	box.style.background = localStorage.setItem("color",col.value);
+	box.style.background = col.value;	
+}
+
+
+
+Page Workers

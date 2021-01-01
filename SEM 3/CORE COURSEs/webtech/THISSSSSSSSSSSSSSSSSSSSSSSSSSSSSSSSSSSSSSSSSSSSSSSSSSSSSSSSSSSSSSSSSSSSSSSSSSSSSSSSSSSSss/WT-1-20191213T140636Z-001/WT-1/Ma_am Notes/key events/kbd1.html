@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+m<html>
+	<head>
+		<body>
+		
+		</body>
+		<script>
+			document.body.addEventListener("keydown",fn1,false);
+			document.body.addEventListener("keypress",fn2,false);
+			document.body.addEventListener("keyup",fn3,false);
+			
+			
+			function fn1(e){
+				console.log(e);
+				console.log(this);
+				console.log("keydown"+e.keyCode);
+			
+			}
+			function fn2(e){
+				console.log("keypress"+e.keyCode);	
+				console.log("keypress"+e.controlKey);	
+			}
+			function fn3(e){
+				console.log("keyup"+e.keyCode);
+			}
+		</script>
+	</head>
+	
+
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STATUS UPDATE SIMULATOR</title>
+<style type="text/css">
+#outer
+{
+	position: absolute;
+	top : 50px;
+	width : 700px;
+}
+</style>
+<script type="text/javascript">
+statDivId = 1;
+function makeStatusUpdate()
+{
+	message = prompt("Enter the status message");
+	outer = document.getElementById("outer");
+	statdiv = document.createElement("div");
+	statdiv.setAttribute("id", "statId"+statDivId);
+	statDivId = statDivId + 1;
+	statdiv.style.border = "2px solid red";
+	statdiv.style.paddingBottom = "5px";
+	statdiv.style.marginBottom = "5px";
+	statdiv.innerHTML = message;
+	outer.appendChild(statdiv);
+	innerStatDiv = document.createElement("div");
+	innerStatDiv.style.paddingBottom = "5px";
+	statdiv.appendChild(innerStatDiv);
+	likeButton = document.createElement("input")
+	likeButton.setAttribute("type", "button");
+	likeButton.setAttribute("value", "LIKE");
+	likeButton.onclick = likeStatus;
+	innerStatDiv.appendChild(likeButton);
+	commentButton = document.createElement("input");
+	commentButton.setAttribute("type", "button");
+	commentButton.setAttribute("value", "COMMENT");
+	commentButton.onclick = commentStatus;
+	innerStatDiv.appendChild(commentButton);
+	deleteButton = document.createElement("input");
+	deleteButton.setAttribute("type", "button");
+	deleteButton.setAttribute("value", "DELETE THIS POST")
+	deleteButton.onclick = deleteStatus;
+	innerStatDiv.appendChild(deleteButton);
+	displayLikeDiv = document.createElement("div");
+	statdiv.appendChild(displayLikeDiv);
+	commentDiv = document.createElement("div");
+	statdiv.appendChild(commentDiv);
+}
+function likeStatus()
+{
+	displayLikeDiv.style.border = "1px solid yellow";
+	if (displayLikeDiv.innerHTML == "")
+	{
+		displayLikeDiv.innerHTML = "Number of likes = 1"
+	}
+	else
+	{
+		s = displayLikeDiv.innerHTML;
+		num = parseInt(s.split("=")[1])
+		displayLikeDiv.innerHTML = "Number of likes = " + (num+1);
+	}
+}
+function commentStatus()
+{
+	comment = prompt("Enter your comment");
+	commentDiv.style.border = "1px solid green"
+	commentDiv.style.padding = "1px";
+	innerCommentDiv = document.createElement("div");
+	innerCommentDiv.style.border = "1px solid blue"
+	innerCommentDiv.innerHTML = comment;
+	commentDiv.appendChild(innerCommentDiv);
+}
+function deleteStatus()
+{
+	outer.removeChild(statdiv);
+}
+</script>
+</head>
+<body>
+	<input type="button" value="Make Status Update" onclick="makeStatusUpdate()"/>
+	<div id="outer">
+	</div>
+</body>
+</html>

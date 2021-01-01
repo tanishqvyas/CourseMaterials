@@ -1,0 +1,19 @@
+1.Difference between Internet and Web?
+
+How does the web work?
+When you want to view any page on the Web, you must initiate the activity by requesting a page using your browser. The browser asks a domain name server to translate the domain name you requested into an IP address. The browser then sends a request to that server for the page you want, using a standard called Hypertext Transfer Protocol or HTTP.
+
+The server should constantly be connected to the Internet, ready to serve pages to visitors. When it receives a request, it looks for the requested document and returns it to the Web browser. When a request is made, the server usually logs the client's IP address, the document requested, and the date and time it was requested. This information varies server to server.
+In Short
+
+We have seen how a Web client - server interaction happens. We can summarize these steps as follows −
+
+A user enters a URL into a browser (for example, Google.com. This request is passed to a domain name server.
+
+The domain name server returns an IP address for the server that hosts the Website (for example, 68.178.157.132).
+
+The browser requests the page from the Web server using the IP address specified by the domain name server.
+
+The Web server returns the page to the IP address specified by the browser requesting the page. The page may also contain links to other files on the same server, such as images, which the browser will also request.
+
+The browser collects all the information and displays to your computer in the form of Web page.

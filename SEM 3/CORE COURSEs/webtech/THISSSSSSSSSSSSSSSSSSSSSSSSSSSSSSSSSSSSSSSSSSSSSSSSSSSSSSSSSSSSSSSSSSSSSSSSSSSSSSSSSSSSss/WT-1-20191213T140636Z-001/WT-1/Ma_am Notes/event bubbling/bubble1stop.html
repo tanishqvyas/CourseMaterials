@@ -1,0 +1,18 @@
+<html>
+<head>
+<title> event bubbling</title>
+</head>
+<body>
+<div id = "parent"> parent
+<button id = "child" onclick ="event.stopPropagation()">child</button>
+</div>
+<script>
+var parent = document.querySelector("#parent")
+parent.addEventListener("click", function(){ 
+console.log("parent clicked");
+},false);
+var child =document.querySelector("#child")
+child.addEventListener("click",function() { console.log("child clicked")},false)
+</script>
+</body>
+</html>

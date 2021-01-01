@@ -1,0 +1,143 @@
+<html>
+	<head>
+		<style>
+			div{
+			   width:270px;
+			   height:60px;
+			   border:solid 1px lightblue;
+			
+			}
+								
+			img{
+			
+			  display:inline;
+			  height:50px;
+			  width:50px;
+			  margin 2px;
+			}
+		#menu{
+			display:none;
+			height:100px;
+			width:100px;
+			position:absolute;
+		}
+		#task{
+
+			
+		}
+		.menuitem{
+			height:25px;
+			width:100px;
+			border:1px solid grey;
+			background-color:blue;
+		}
+		.menuitem:hover{
+			
+			background-color:white;
+		}
+		</style>
+	
+	
+	</head>
+	
+	<body>
+		<div id="abc">
+		<img src="star_off.png" id="star_0"/>
+		<img src="star_off.png" id="star_1"/>
+		<img src="star_off.png" id="star_2"/>
+		<img src="star_off.png" id="star_3"/>
+		<img src="star_off.png" id="star_4"/>
+		</div>
+		<div id="menu">
+			<div id="item1" class="menuitem">Task</div>
+			<div id="item2" class="menuitem">File</div>
+			<div id="item3" class="menuitem">Rename</div>
+			<div id="item4" class="menuitem">Delete</div>
+			
+		</div>
+		<script>
+		var stars=document.querySelectorAll("[src='star_off.png']")
+		function register(){
+		for(var i=0;i<stars.length;i++){
+			stars[i].addEventListener("mouseover",glow,false);
+			stars[i].addEventListener("mouseout",unglow,false);
+			stars[i].addEventListener("click",rate,false);
+		
+		}
+		document.body.addEventListener("contextmenu",showmenu,false);
+		document.body.addEventListener("click",hidemenu,false);
+		}
+		function hidemenu(e){
+			document.getElementById("menu").style.display="none";
+		
+		
+		}
+		function showmenu(e){
+		e.preventDefault();
+		document.getElementById("menu").style.display="block"
+		document.getElementById("menu").style.left=e.clientX;
+		document.getElementById("menu").style.top=e.clientY;
+		console.log(e.clientY);
+		console.log(document.getElementById("menu").style.top)
+		//alert("contextmenu");
+		
+		}
+		function rate(e){
+			index=e.target.id.slice(5);
+			for(var i=0;i<=index;i++){
+				stars[i].src="star_on.png";
+			}
+			for(var i=0;i<5;i++){
+				stars[i].removeEventListener("mouseover",glow,false);
+				stars[i].removeEventListener("mouseout",unglow,false);
+				stars[i].removeEventListener("click",rate,false);
+				stars[i].addEventListener("dblclick",unrate,false);
+			
+			}
+		
+		
+		}
+		function unrate(e){
+			if(e.target.src="star_on.jpg")
+			{
+				for(var i=0;i<5;i++){
+					stars[i].src="star_off.png";
+					stars[i].addEventListener("mouseover",glow,false);
+					stars[i].addEventListener("mouseout",unglow,false);
+					stars[i].addEventListener("click",rate,false);
+					
+				}
+			
+			}
+		
+		}
+		function unglow(e){
+				if(e.target.src="star_on.png"){
+					index=e.target.id.slice(5);
+					for(var i=0;i<=index;i++){
+					stars[i].src="star_off.png";
+					}
+				}
+		
+		
+		}
+		function glow(e){
+			console.log(e.target.id.slice(5));
+			index=e.target.id.slice(5);
+			for(var i=0;i<=index;i++){
+			stars[i].src="star_on.png";
+			}
+		}
+		
+		
+		
+		register();
+		</script>
+	
+	
+	</body>
+
+
+
+
+</html>

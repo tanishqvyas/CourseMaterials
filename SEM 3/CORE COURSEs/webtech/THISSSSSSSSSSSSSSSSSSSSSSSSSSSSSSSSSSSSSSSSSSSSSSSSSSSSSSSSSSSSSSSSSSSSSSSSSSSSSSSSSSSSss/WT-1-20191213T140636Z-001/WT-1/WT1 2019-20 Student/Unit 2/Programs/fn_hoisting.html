@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			
+			test();
+			//function definitions are hoisted
+			function test(){
+					console.log("hello");
+			}
+			//function expressions are not hoisted
+			b();//error
+			var b=function(){
+			
+				console.log("Can i be hoisted");
+			}
+			b();
+			
+		</script>
+	
+	</head>
+
+
+</html>

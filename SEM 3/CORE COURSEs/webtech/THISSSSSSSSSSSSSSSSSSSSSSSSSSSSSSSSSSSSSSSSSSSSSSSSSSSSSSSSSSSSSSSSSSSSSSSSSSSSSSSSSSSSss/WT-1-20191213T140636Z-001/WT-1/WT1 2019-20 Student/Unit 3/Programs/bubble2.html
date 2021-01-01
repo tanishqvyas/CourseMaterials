@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.d1{background-color: green;
+				  position: relative;
+				  width: 150px;
+				  height: 150px;
+				  text-align: center;
+				  cursor: pointer;
+				}
+
+			.d2 {
+			  background-color: blue;
+			  position: absolute;
+			  top: 25px;
+			  left: 25px;
+			  width: 100px;
+			  height: 100px;
+			}
+
+			.d3 {
+			  background-color: red;
+			  position: absolute;
+			  top: 25px;
+			  left: 25px;
+			  width: 50px;
+			  height: 50px;
+			  line-height: 50px;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<div class="d1">1  
+			<div class="d2">2
+				<div class="d3">3 
+				</div> 
+			</div>
+		</div>
+		<script>
+			var divs = document.getElementsByTagName('div')
+			for(var i=0; i<divs.length; i++) {
+				divs[i].onclick = function(e) {
+				console.log(e);
+				//e.stopPropagation();
+				//e.cancelBubble=true;
+				var target = e.target
+				//this.style.backgroundColor='yellow'
+				//target.style.backgroundColor='yellow'
+				console.log("target = "+target.className+", this="+this.className)
+				
+				
+				}
+			}
+		
+		</script>
+	</body>
+
+
+
+</html>

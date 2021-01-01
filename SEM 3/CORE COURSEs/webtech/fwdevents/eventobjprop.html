@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example for CTRL,ALT,SHIFT key</title>
+    </head>
+<body>
+
+<input type="text" onkeydown="isKeyPressed(event)">
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+	
+	function isKeyPressed(event) {
+		
+		var x = document.getElementById("demo");
+		if(event.ctrlKey)
+		{
+			x.innerHTML = "Pressed ctrl";
+		}
+
+		else
+		{
+			x.innerHTML = "Didnt Press ctrl";
+
+		}
+	}
+</script>
+
+  
+</body>
+</html>

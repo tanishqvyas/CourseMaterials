@@ -1,0 +1,35 @@
+1 From Digital Design and Computer Architecture (2dn ed.) by Harris and Harris
+==============================================================================
+
+  - Chapter 3: 3.4, 3.4.1-3.4.3 (including all three examples)
+  - As not much in Harris on counters,
+    [http://www-inst.eecs.berkeley.edu/~cs150/sp13/agenda/lec/lec22-counters.pdf]
+    (pages 4-6 numberd as pages 7-11, skip verilog and parallel prefix)
+  - Chapter 5: 5.2.1 (exclude "Putting It All Together"), 5.5, 5.5.1
+    (also brief descriptions of SRAM, DRAM, ROM and register file (done
+    in lab) with one application each (cache, main memory etc.), no need
+    to explain their structure)
+  - For carry save adder and wallace tree multiplier, the reference is
+    first edition of Introduction to Algorithms by Cormen, et al which
+    is available at
+    [http://staff.ustc.edu.cn/~csli/graduate/algorithms/book6/chap29.htm].
+    - Sec. 29.2.3 Carry save addition
+    - Sec. 29.3.2 Wallace-tree multipliers
+  - Chapter 6: 6.1 and 6.2 (understanding the material essential but not
+    the "principles")
+
+
+2 From Computer Organization and Design (5th ed.) by Patterson and Hennessy
+===========================================================================
+
+  - Chapter 3: 3.3 (exclude "Multiply in MIPS"), 3.4 (Exclude "Fast
+    Division" and "Divide in MIPS"), 3.5 (only "Floating Point
+    Representation")
+
+
+3 Handout
+=========
+
+  - For parallel prefix, PFA.
+
+Attachments area

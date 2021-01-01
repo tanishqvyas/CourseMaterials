@@ -1,0 +1,17 @@
+<h1 id="elem"> hello for john </h1>
+
+<script>
+var event = new CustomEvent("build",{detail:{name:"johan"}});
+
+// Listen for the event.
+elem.addEventListener("build", test, false)
+test();
+function test(event) 
+{ alert("new event created..." +event.type);
+alert(event.detail.name)
+}
+elem.dispatchEvent(event); 
+
+// Dispatch the event.
+
+</script>

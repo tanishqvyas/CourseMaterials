@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> mouse over </title>
+</head>
+<body>
+
+<h1 id="demo">Section E</h1>
+
+<script>
+document.getElementById("demo").addEventListener("mouseover", mouseOver);
+
+document.getElementById("demo").addEventListener("mouseout", mouseOut);
+
+function mouseOver() {
+  document.getElementById("demo").style.color = "red";
+}
+
+function mouseOut() {
+  document.getElementById("demo").style.color = "black";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+CSS
+Types of stylesheet - inline,document-level/internal , external
+CSS Rule format
+Selectors : element,class selector,id selector, universal/widcard selector,descendant selector, pseudo selectors
+
+  

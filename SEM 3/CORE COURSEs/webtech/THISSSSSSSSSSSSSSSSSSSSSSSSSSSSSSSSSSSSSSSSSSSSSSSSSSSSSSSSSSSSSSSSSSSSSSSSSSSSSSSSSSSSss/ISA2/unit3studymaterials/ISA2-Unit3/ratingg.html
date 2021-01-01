@@ -1,0 +1,133 @@
+<html>
+	<head>
+		<style>
+			div{
+			   width:270px;
+			   height:60px;
+			   border:solid 1px lightblue;
+			
+			}
+								
+			img{
+			
+			  display:inline;
+			  height:50px;
+			  width:50px;
+			  margin 2px;
+			}
+		#menu{
+			display:none;
+			height:100px;
+			width:100px;
+			position:absolute;
+		}
+		#task{
+
+			height:100px;
+			width:100px;
+			position:absolute;
+		}
+		</style>
+	
+	
+	</head>
+	
+	<body>
+		<div id="abc">
+		<img src="star_off.png" id="star_0"/>
+		<img src="star_off.png" id="star_1"/>
+		<img src="star_off.png" id="star_2"/>
+		<img src="star_off.png" id="star_3"/>
+		<img src="star_off.png" id="star_4"/>
+		<div id="menu">
+			<div id="task">Task</div>
+		</div>
+		
+		</div>
+
+		<script>
+			
+			stars=document.querySelectorAll("[src='star_off.png']")
+				function register(){
+					document.body.addEventListener("contextmenu",show,false);
+			
+			for(var i=0;i<stars.length;i++){
+			stars[i].addEventListener("mouseover",glow,false);
+			stars[i].addEventListener("mouseout",unglow,false);
+			stars[i].addEventListener("click",rate,false);
+			stars[i].addEventListener("dblclick",unrate,false);
+				}
+				
+			}
+			function show(e)
+			{
+				e.preventDefault();
+				console.log("menu");
+				var menu=document.getElementById("menu");
+				menu.style.display="block";
+				menu.style.left=e.clientX;
+				menu.style.top=e.clientY;
+
+			}
+			
+			function glow(e){
+				e.target.src="star_on.png"
+				var index=getIndex(e.target)
+				for(var i=0;i<index;i++){
+					stars[i].src="star_on.png"
+				}
+			
+			}
+			function unglow(e){
+				var index=getIndex(e.target)
+				for(var i=0;i<=index;i++){
+					stars[i].src="star_off.png"
+				}
+			}
+			function rate(e){
+			
+				var index=getIndex(e.target)
+				for(var i=0;i<=index;i++){
+					stars[i].src="star_on.png"
+				}
+				for(var i=0;i<stars.length;i++){
+					stars[i].removeEventListener("mouseover",glow,false)
+					stars[i].removeEventListener("click",rate,false)
+					stars[i].removeEventListener("mouseout",unglow,false)
+					
+				
+				}
+			}
+			function unrate(e){
+			
+				var index=getIndex(e.target)
+				for(var i=0;i<=index;i++){
+					stars[i].src="star_off.png"
+				}
+				for(var i=0;i<stars.length;i++){
+					stars[i].addEventListener("mouseover",glow,false)
+					stars[i].addEventListener("click",rate,false)
+					stars[i].addEventListener("mouseout",unglow,false)
+				
+				}
+			}	
+			function getIndex(star){
+					for(var i=0;i<stars.length;i++){
+						if(star.id==stars[i].id){
+							return i;
+						}
+					}
+					return -1;
+			}
+			
+				
+			register();	
+		</script>
+	
+	
+	</body>
+
+
+
+
+</html>

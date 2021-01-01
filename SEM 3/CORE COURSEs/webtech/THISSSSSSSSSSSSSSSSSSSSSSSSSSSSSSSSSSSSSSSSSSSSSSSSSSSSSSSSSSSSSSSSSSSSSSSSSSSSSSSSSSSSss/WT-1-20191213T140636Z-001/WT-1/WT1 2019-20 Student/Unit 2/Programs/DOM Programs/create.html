@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			div{
+				border: 4px solid black;
+			}
+		
+		</style>
+		<script>
+			function create(){
+						var d1=document.getElementById("test");
+						var img=document.createElement("img");
+						var heading=document.querySelector("h1")
+						img.setAttribute("src","pes.png");
+						var img1=document.createElement("img");
+						img1.src="h_logo.jpg";
+						document.body.insertBefore(img,d1);//this inserts before the div. document.body is the parent of div
+						d1.insertBefore(img1,heading)//this inserts before the heading. div is the parent of heading
+				}
+		</script>
+	</head>
+	<body>
+	<div id="test">
+	<h1>Welcome to DOOM DOM</h1>
+	<button onclick="create()">Pic Time</button>
+	</div>
+	</body>
+
+
+
+</html>
+
+

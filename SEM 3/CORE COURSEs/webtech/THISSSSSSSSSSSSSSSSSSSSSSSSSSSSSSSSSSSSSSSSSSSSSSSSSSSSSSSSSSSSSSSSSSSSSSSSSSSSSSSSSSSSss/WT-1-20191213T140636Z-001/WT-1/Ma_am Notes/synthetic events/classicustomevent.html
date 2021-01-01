@@ -1,0 +1,22 @@
+<html>
+<head>
+<h1 id = "btn1"> custom Event</h1>
+</head>
+<body>
+<script>
+var elem = new CustomEvent("build",{detail:{name:"hello"}})
+var btn1=	document.getElementById("btn1")
+btn1.addEventListener("build", test, false)
+btn1.dispatchEvent(elem)
+
+
+function test(event)
+{
+alert(event.type)
+console.log(event.target.id)
+console.log(event.detail.name)
+}
+//test()
+</script>
+</body>
+</html>

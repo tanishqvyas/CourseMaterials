@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<style>
+			
+								
+			img{
+			// display:inline;
+			  height:50px;
+			  width:50px;
+			  margin 2px;
+			}
+		</style>
+	
+	
+	</head>
+	
+	<body>
+		<div id="abc">
+		<img src="star_off.png" id="star_0"/>
+		<img src="star_off.png" id="star_1"/>
+		<img src="star_off.png" id="star_2"/>
+		<img src="star_off.png" id="star_3"/>
+		<img src="star_off.png" id="star_4"/>
+		
+		</div>
+
+		
+	
+	
+	</body>
+	<script>
+		
+			var stars=document.getElementsByTagName("img")
+			//var stars = document.querySelectorAll("img")
+			console.log(stars.length)
+			if(stars) {listeners()}
+			function listeners(){
+				for(var i=0;i<stars.length;i++){
+				
+					stars[i].addEventListener("mouseover",glow,false);
+					stars[i].addEventListener("mouseout",unglow,false);
+					//stars[i].addEventListener("click",rate,false);
+					//obj.stars[i].addEventListener("dblclick",obj.cancel,false);
+				
+				}}
+			
+			
+			
+			function glow(e){
+				e.target.src="star_on.png";
+				var index=getIndex(e.target.id)
+				for(var i=0;i<index;i++){
+				stars[i].src="star_on.png";
+				}
+				}
+			
+			function unglow(e){
+				e.target.src="star_off.png";
+		var index=getIndex(e.target.id);
+				for(var i=0;i<=index;i++){
+					stars[i].src="star_off.png";
+				}
+				}			
+			function getIndex(starId){
+				for (var i=0;i<stars.length;i++){
+				
+					if(starId==stars[i].id){
+						return i;
+					}
+				}
+				return -1;
+			
+			}
+			
+			//function rate(e){
+			
+				//glow(e);
+				//for(var i=0;i<stars.length;i++){
+				
+					//stars[i].removeEventListener("mouseover",glow,false);
+					//obj.stars[i].removeEventListener("mouseout",obj.unglow,false);
+					//obj.stars[i].removeEventListener("click",obj.rate,false);
+				
+				//}
+				//}
+				
+				</script>
+
+
+
+</html>

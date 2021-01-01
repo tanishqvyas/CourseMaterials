@@ -1,0 +1,30 @@
+<html>
+			
+<body id="theBody" class="item">thebody
+    <div id="one_a" class="item">one_a
+        <div id="two" class="item">two
+            <div id="three_a" class="item">three_a
+                <button id="buttonOne" class="item">buttonone</button>
+            </div>
+            <div id="three_b" class="item">threeb
+                <button id="buttonTwo" class="item">buttontwo</button>
+                <button id="buttonThree" class="item">buttonthree</button>
+            </div>
+        </div>
+    </div>
+    <div id="one_b" class="item">one_b
+    </div> </body>
+
+<script>
+ var names= document.getElementsByClassName("item")
+ for(var i=0;i<names.length;i++)
+{ names[i].addEventListener("click", bubble, true)
+    }
+ function bubble(e)
+ {
+ console.log("target = "+e.target.id)
+ console.log("this = "+this.id)
+ e.stopPropagation()
+ }
+ </script>
+ </html>

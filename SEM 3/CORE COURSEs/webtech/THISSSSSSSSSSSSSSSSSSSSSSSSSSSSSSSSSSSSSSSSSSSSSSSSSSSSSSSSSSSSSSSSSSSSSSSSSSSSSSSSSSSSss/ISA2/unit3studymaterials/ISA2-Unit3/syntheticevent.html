@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<input type="button" id="demo"/>
+
+<script>
+
+	function wrap()
+	{
+		var ev = new Event("myEvent")
+
+		btn = getElementById("demo")
+
+		btn.addEventListener("myEvent", func1, false)
+
+		btn.dispatchEvent(ev);
+	}
+
+	fucntion func1()
+	{
+		alert("coustom event");
+	}
+
+	wrap();
+
+</script>
+
+
+</body>
+</html>

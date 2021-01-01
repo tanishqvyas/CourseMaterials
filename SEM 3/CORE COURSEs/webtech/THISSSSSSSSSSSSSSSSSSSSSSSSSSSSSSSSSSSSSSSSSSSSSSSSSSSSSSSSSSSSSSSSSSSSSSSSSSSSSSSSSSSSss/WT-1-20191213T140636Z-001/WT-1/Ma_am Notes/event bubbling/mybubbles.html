@@ -1,0 +1,53 @@
+<html>
+<head>
+	<style>
+	
+	.d1{background-color: green;
+				  position: relative;
+				  width: 350px;
+				  height: 300px;
+				  text-align: center;
+				  
+				}
+
+			.d2 {
+			  background-color: blue;
+			  position: absolute;
+			  top: 50px;
+			  left: 50px;
+			  width: 250px;
+			  height: 200px;
+			}
+
+			.d3 {
+			  background-color: red;
+			  position: absolute;
+			  top: 50px;
+			  left: 50px;
+			  width: 150px;
+			  height: 100px;
+			 
+			  }
+	</style>
+</head>	
+<body>
+<div class = "d1">1
+	<div class = "d2">2
+		<div class = "d3">3
+		</div>
+	</div>
+</div>
+<script>
+var divs=document.getElementsByTagName("div")	
+     for(var i=0;i<divs.length;i++)
+	{
+		divs[i].onclick = function(event)
+		{
+		alert("window selected")
+		var target = event.target
+		console.log("target =" +target.className+ ",this =" +this.className)
+		this.style.border-color="yellow"
+	}	}
+</script>
+</body>
+</html>

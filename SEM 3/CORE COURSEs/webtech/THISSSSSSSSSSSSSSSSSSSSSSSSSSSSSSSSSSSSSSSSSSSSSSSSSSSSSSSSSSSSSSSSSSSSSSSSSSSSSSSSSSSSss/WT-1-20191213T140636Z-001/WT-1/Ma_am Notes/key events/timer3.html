@@ -1,0 +1,20 @@
+<html>
+<head>
+      <title>onload Event</title>
+      <script type = "text/javascript">
+         var seconds = 0;
+         function startTimer() 
+         {         window.setInterval( "updateTime()", 1000);   } 
+         function updateTime()
+         {
+            ++seconds;                
+            document.getElementById( "soFar" ).innerHTML = seconds;
+         } 
+      </script>
+   </head>
+   <body onload = "startTimer()">
+      <p>Seconds you have spent viewing this page so far:
+      <strong id = "soFar">0</strong></p>
+   </body>
+</html>
+

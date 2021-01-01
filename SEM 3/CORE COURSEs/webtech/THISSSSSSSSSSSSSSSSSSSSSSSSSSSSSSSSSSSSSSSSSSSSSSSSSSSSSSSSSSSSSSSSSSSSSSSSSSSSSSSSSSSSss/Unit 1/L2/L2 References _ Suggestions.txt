@@ -1,0 +1,9 @@
+* The code and material in the slides is from the Sebesta Textbook
+* A few questions students have  asked in the past
+	-How to include comments in HTML
+	-How to open a link in a new tab
+	-How to open link in a new window
+        -How to change the logo that appears in next to the title
+*Please demo these concets in class through code examples
+       
+

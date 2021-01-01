@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			div{
+				border: 4px solid black;
+			}
+		
+		</style>
+		<script>
+			var obj={
+				create:function(){
+						var d1=document.getElementById("test");
+						var img=document.createElement("img");
+						img.setAttribute("src","pes.png");
+						document.body.insertBefore(img,d1);
+						console.log(document.body.children[2]);
+						/*if(d1.nextSibling.nodeType==3)
+							
+						{
+							console.log("textnode"); 
+						}*/
+					
+				}
+			
+			}
+		
+		</script>
+	</head>
+	<body onload="obj.create()">
+	<div id="test"></div>
+	
+	</body>
+
+
+
+</html>
+
+

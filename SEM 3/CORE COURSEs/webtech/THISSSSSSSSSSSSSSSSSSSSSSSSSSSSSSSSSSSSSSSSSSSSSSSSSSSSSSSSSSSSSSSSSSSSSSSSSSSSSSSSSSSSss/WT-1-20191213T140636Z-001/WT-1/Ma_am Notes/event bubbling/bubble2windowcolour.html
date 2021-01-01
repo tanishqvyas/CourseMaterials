@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.d1{background-color: green;
+				  position: relative;
+				  width: 350px;
+				  height: 350px;
+				  text-align: center;
+				  
+				}
+
+			.d2 {
+			  background-color: blue;
+			  position: absolute;
+			  top: 50px;
+			  left: 25px;
+			  width: 300px;
+			  height: 250px;
+			}
+
+			.d3 {
+			  background-color: red;
+			  position: absolute;
+			  top: 50px;
+			  left: 50px;
+			  width: 200px;
+			  height: 150px;
+			  //line-height: 50px;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<div class="d1">1  
+			<div class="d2">2
+				<div class="d3">3 
+				</div> 
+			</div>
+		</div>
+		<script>
+			var divs = document.getElementsByTagName('div')
+			for(var i=0; i<divs.length; i++) {
+				divs[i].onclick = function(e) {
+				alert("window coloured")
+				//e.stopPropagation();
+				e.cancelBubble=true;
+				var target = e.target
+				this.style.backgroundColor='yellow'
+				console.log("target = "+target.className+", this="+this.className)
+				//this.style.backgroundColor = ''
+				
+				}
+			}
+		
+		</script>
+	</body>
+
+
+
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head>
+<title> Event Bubbling </title>
+<style>
+	.divstyle{
+	border :5px solid black;
+	display: table-cell;
+	padding: 20px;
+	text_align: center;
+		}
+</style>
+</head>
+<body>
+<div id ="div1" class = "divstyle">parent
+	<div id ="div2" class = "divstyle"> child
+	<div id ="div3" class = "divstyle"> grandchild
+	</div>
+	</div>
+</div>
+<script>
+var divelements=document.getElementsByTagName("div")	
+ for (var i=0; i < divelements.length; i++)
+
+{
+divelements[i].onclick = function(event)
+{
+//e.stopPropagation();
+//e.cancelBubble="true"
+this.style.borderColor="red"
+alert(this.getAttribute("id") + "border colour changed")
+}}
+
+</script>
+</body>
+</html>
+

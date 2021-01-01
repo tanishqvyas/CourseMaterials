@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var a=8;//global
+			function test(){
+			  a=6;//global
+			  var b=7;//local scope
+			  c=90 //global scope as it is declared without var
+			  console.log(a);
+			
+			}
+			test();//
+			console.log(a);
+			console.log(b);
+			console.log(c);
+			
+			</script>
+	</head>
+	<body>
+
+	
+	
+	</body>
+
+</html>

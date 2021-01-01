@@ -1,0 +1,30 @@
+<html>
+<head>
+<title> keyboard events </title>
+</head>
+<body> </body>
+<script>
+ document.body.addEventListener("keyup",fn1, false)
+ document.body.addEventListener("keypress",fn2, false)
+ document.body.addEventListener("keydown",fn2, false)
+ 
+ function fn1(e)
+ {
+ console.log(e)
+ console.log(e.target)
+ console.log(e.target+ e.keyCode)
+ }
+// function fn2(e)
+ /{
+ console.log(e)
+ console.log(this)
+ console.log(e.target+ e.shiftKey)
+ }
+ function fn3(e)
+ {
+ console.log(e)
+ console.log(e.target)
+ console.log(e.target+ e.shiftKey)
+ }
+</script>
+</html>

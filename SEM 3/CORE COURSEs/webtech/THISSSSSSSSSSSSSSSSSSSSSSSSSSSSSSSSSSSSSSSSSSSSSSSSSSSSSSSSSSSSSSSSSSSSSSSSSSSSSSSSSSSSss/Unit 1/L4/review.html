@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A review form</title>
+		<style>
+			div {
+				width: 320px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+			}
+			</style>
+	</head>
+	<body>
+	<form action=" " method="get" align="center">
+	<div>
+		<h1>Please review the movie</h1>
+		<label>Name<input type="text" name="myname"></label><br/>
+		<label>Age<input type="text" name="myage"></label><br/>
+		<label>Watched
+		<input type="checkbox" name="watch" value="theater">theater</input>
+		<input type="checkbox" name="watch" value="home">home</input>
+		<input type="checkbox" name="watch" value="school">school</input>
+		<input type="checkbox" name="watch" value="lectures">lectures</input>
+		</label><br/>
+		<label>Times
+		<input type="radio" name="times" value="1">1</input>
+		<input type="radio" name="times" value="2">2</input>
+		<input type="radio" name="times" value="3">3</input>
+		<input type="radio" name="times" value="4">4</input><br/>
+		</label>
+		</div>
+		<select name="rating" size="2" multiple>
+			<option value="g">Good</option>
+			<option value="vg">Very Good</option>
+			<option value="ex">Excellent</option>
+		</select><br/>
+		<textarea name="comm"> </textarea><br/>
+		<input type="submit"/><br/>
+		<h1>HTML5 Input Types</h1>
+			Email<input type="email"/><br/>
+			Number<input type="number"/><br/>
+			Range<input type="range" name="range" min="5" max="20"/><br/>
+			URL<input type="url"/><br/>
+			Color<input type="color"/><br/>
+			Search<input type="search"/><br/>
+			Date<input type="date"/><br/>
+			Month<input type="month"/><br/>
+			Time<input type="time"/><br/>
+			Week<input type="week"/><br/>
+			Date Time<input type="datetime-local"/><br/><!-- Datetime to be avoided-->
+		</label>
+	</form>	
+	</body>
+
+
+
+</html>

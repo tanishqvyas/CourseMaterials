@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			#d1{background-color: green;
+				  position: relative;
+				  width: 150px;
+				  height: 150px;
+				  text-align: center;
+				  cursor: pointer;
+				}
+
+			#d2 {
+			  background-color: blue;
+			  position: absolute;
+			  top: 25px;
+			  left: 25px;
+			  width: 100px;
+			  height: 100px;
+			}
+
+			#d3 {
+			  background-color: red;
+			  position: absolute;
+			  top: 25px;
+			  left: 25px;
+			  width: 50px;
+			  height: 50px;
+			  line-height: 50px;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<div id="d1">1  
+			<div id="d2">2
+				<div id="d3">3 
+				</div> 
+			</div>
+		</div>
+		<script>
+			//d1.addEventListener("click",test1,false);
+			//d2.addEventListener("click",test2,false);
+			//d3.addEventListener("click",test3,false);
+			d1.addEventListener("click",test1,true);
+			d2.addEventListener("click",test2,true);
+			d3.addEventListener("click",test3,true);
+			function test1(e){
+					console.log("d1");
+			}
+			function test2(e){
+					
+					//e.stopPropagation();
+					console.log("d2");
+					//e.cancelBubble=true;
+			}
+			function test3(e){
+					console.log("d3");
+			}
+		
+		</script>
+	</body>
+
+
+
+</html>

@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<style>
+			div{
+			   width:270px;
+			   height:60px;
+			   border:solid 1px black;
+			
+			}
+		
+
+			
+			
+			img{
+			
+			  display:inline;
+			  height:50px;
+			  width:50px;
+			  margin 2px;
+			}
+		</style>
+	
+	
+	</head>
+	
+	<body>
+		<div id="abc">
+		<img src="star_off.png" id="star_0"/>
+		<img src="star_off.png" id="star_1"/>
+		<img src="star_off.png" id="star_2"/>
+		<img src="star_off.png" id="star_3"/>
+		<img src="star_off.png" id="star_4"/>
+		
+		</div>
+
+		<script>
+			var obj={
+				stars:document.querySelectorAll("img"),
+				listener:function(){
+				for(var i=0;i<obj.stars.length;i++){		
+			obj.stars[i].addEventListener("mouseover",obj.glow,false);
+			obj.stars[i].addEventListener("mouseout",obj.unglow,false);
+			obj.stars[i].addEventListener("click",obj.rate,false);
+					}
+				},
+				rate:function(e){
+					obj.glow(e);
+					for(var i=0;i<obj.stars.length;i++){		
+			obj.stars[i].removeEventListener("mouseover",obj.glow,false);
+			obj.stars[i].removeEventListener("mouseout",obj.unglow,false);
+			obj.stars[i].removeEventListener("click",obj.rate,false);
+					}
+				
+				},
+				unglow:function(e){
+					var index=obj.getIndex(e.target);
+					for(var i=0;i<=index;i++){
+						obj.stars[i].src="star_off.png";
+					}
+				},
+				glow:function(e){
+					e.target.src="star_on.png";
+					var index=obj.getIndex(e.target);
+					for(var i=0;i<index;i++){
+						obj.stars[i].src="star_on.png";
+					}
+				},
+				
+				getIndex:function(star){
+					for(var i=0;i<obj.stars.length;i++){
+						if(star.id==obj.stars[i].id)
+						{
+							return i;
+						}
+					
+					}
+					return -1;
+				
+				
+				}
+			
+			//TODO: Add right click functionality
+			
+			}	
+			obj.listener();	
+		</script>
+	
+	
+	</body>
+
+
+
+
+</html>

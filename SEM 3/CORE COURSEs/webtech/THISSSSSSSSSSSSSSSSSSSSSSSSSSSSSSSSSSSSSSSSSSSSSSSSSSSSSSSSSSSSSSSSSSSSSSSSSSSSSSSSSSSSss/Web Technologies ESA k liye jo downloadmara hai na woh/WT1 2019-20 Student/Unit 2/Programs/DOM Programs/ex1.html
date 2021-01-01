@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script>
+		var obj={
+			
+			title:document.getElementById("title"),
+			logo:document.getElementById("logo"),
+			cover:document.querySelector("#cover"),
+			changeTitle:function(){
+				title.innerHTML="<p id='name'>PES University</p>";
+			},
+			changeLogo:function(){
+				logo.src="pes.png"
+			},
+			changeCover:function(){
+				cover.setAttribute("src","pes_cover.jpg");
+			
+			},
+			changePara:function(){
+				var paras=document.querySelectorAll(".desc")
+				for(var i=0;i<paras.length;i++){
+					paras[i].innerHTML="We are PES University";
+				}
+			
+			},
+			changeRed:function(){
+				var parent=document.getElementById("main");
+				parent.children[1].style.color="red"
+			
+			},
+			changeAll:function(){
+					this.changeCover();
+					this.changeLogo();
+					this.changePara();
+					this.changeRed();
+					this.changeTitle();
+					var btns=document.querySelectorAll(".change");
+					var btndiv=document.getElementById("btndiv");
+					for(var i=0;i<btns.length;i++){
+						btndiv.removeChild(btns[i]);
+					
+					}
+					
+			
+			}
+		
+		
+		
+		
+		}
+	
+	
+	</script>
+	<style>	
+	#logo{
+		z-index:1;
+        position:fixed;
+		top:10px;
+        left:10px;
+	}
+	#name{
+		font-family:impact;
+		font-size:3em;
+		text-align:center;
+		color:white;
+	}
+	#title{
+		z-index:1;
+        position:absolute;
+		top:10px;
+        left:200px;
+	
+	}
+	body{
+		background-color:#AF7AC5;
+	
+	}
+	.desc{
+		color:#4A235A;
+		font-family:garamond;
+		font-size:1.5em;
+		text-align:center;
+	}
+	#main{
+		border:4px grey solid;
+		background-color:#EBDEF0;
+		height:25%;
+		width:70%;
+		position:relative;
+		left:15%;
+		top:2%;
+	}
+	#houses{
+		align:center;
+		position:relative;
+		left:25%;
+		top:5%;
+	}
+	.house{
+		height:20em;
+		width:20em;
+	}
+	td{
+		border:1px solid black;
+	}
+	.al{
+		position:relative;	
+		left:15%;
+		font-size:2em;
+	}
+	.change{
+		 color: white;
+         border-radius: 4px;
+         text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+		 background: rgb(28, 184, 65); /* this is a green */
+	
+	}
+	
+	</style>
+	</head>
+	<body>
+		<img src="cover_hog.jpg" id="cover"/>
+		<img id="logo" src="h_logo.jpg"/>
+		<div id="title"><p id="name">HOGWART'S SCHOOL OF  WITCHCRAFT & WIZARDRY</p></div>
+		<div id="main">
+			<p class="desc">
+			All first-years at Hogwarts must take seven subjects: Transfiguration, Charms, Potions, History of Magic, Defence Against the Dark Arts, Astronomy and Herbology. Flying lessons (on broomsticks) are also compulsory.
+			</p>
+
+			<p class="desc">
+			At the end of their second year at Hogwarts, students are required to choose a minimum of two more subjects from the following list: Arithmancy, Muggle Studies, Divination, Study of Ancient Runes and Care of Magical Creatures.
+			</p>
+
+			<p class="desc">Very specialised subjects such as Alchemy are sometimes offered in the final two years, if there is sufficient demand.</p>
+			
+			</p>
+		</div>
+		<div id="houses">
+			<div><p class="al">HOUSES AT HOGWART'S</p></div>
+			<table>
+				<tr>
+					<td><img class="house" src="gryff.jpg"/></td>
+					<td><img class="house" src="raven.jpg"/></td>
+				</tr>
+				<tr>
+					<td><img class="house" src="huffle.jpg"/></td>
+					<td><img class="house" src="sly.jpg"/></td>
+
+				</tr>	
+			
+			</table>
+			<div id="btndiv">
+				<!--Change title to PES University -->
+				<input class="change" type="button" value="Change Title" onclick="obj.changeTitle()"/>
+				<!--Change to PES logo - GEBI-->
+				<input class="change" type="button" value="Change Logo" onclick="obj.changeLogo()"/>
+				<!--Change to PES logo - QS -->
+				<input class="change" type="button" value="Change Cover" onclick="obj.changeCover()"/>
+				<!--Change Paragraph 1,2,3  only - QSA-->	
+				<input class="change" type="button" value="Change Para" onclick="obj.changePara()"/>
+				<!--Change Paragraph 2 to Red only-->	
+				<input class="change" type="button" value="Change Red" onclick="obj.changeRed()"/>
+				<!--Change two houses to branches.Use traversal
+				<input class="change" type="button" value="Change Houses" onclick="obj.changeHouses()"/>-->
+				<!--Change everything and make the buttons disappear-->
+				<input class="change" type="button" value="Change Everything" onclick="obj.changeAll()"/>
+				<!-- Add a heading about events in PES
+				<input class="change" type="button" value="Add Heading" onclick="obj.addHeading()"/>
+				-->
+			</div>
+		
+		</div>
+	
+	</body>
+
+
+
+</html>

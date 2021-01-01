@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+		<script>
+			
+			var obj={
+				
+				in:function(t){
+				
+					alert("inline event occured");
+					console.log(t);
+					t.value="done"
+				},
+				
+				listener:function(){
+					var trad=document.getElementById("trad");
+					trad.onclick=this.tradfn;
+					var w3c=document.getElementById("w3c");
+					w3c.addEventListener("click",this.w3c,false);
+				},
+				tradfn:function(e){
+					alert("this is a traditional fn");
+				},
+				w3c:function(e){
+				
+					alert("this is w3c");
+					console.log(this)
+					console.log(e)
+					console.log(e.target)
+					console.log(e.screenX)
+				}
+			
+			}
+			
+		</script>
+	</head>
+	<body onload="obj.listener()">
+		<input type="button" value="Inline" onclick="obj.in(this)"/>
+		<input type="button" value="Trad" id="trad"/>
+		<input type="button" value="W3C" id="w3c"/>
+	</body>
+</html>	

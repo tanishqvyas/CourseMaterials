@@ -1,0 +1,16 @@
+<html>
+<head>
+<title> event capturing</title>
+</head>
+<body>
+<div id = "parent"> parent
+<button id = "child" >child</button>
+</div>
+<script>
+var parent = document.querySelector("#parent")
+parent.addEventListener("click", function(){ console.log("parent clicked")},true);
+var child =document.querySelector("#child")
+child.addEventListener("click",function() { console.log("child clicked")})
+</script>
+</body>
+</html>

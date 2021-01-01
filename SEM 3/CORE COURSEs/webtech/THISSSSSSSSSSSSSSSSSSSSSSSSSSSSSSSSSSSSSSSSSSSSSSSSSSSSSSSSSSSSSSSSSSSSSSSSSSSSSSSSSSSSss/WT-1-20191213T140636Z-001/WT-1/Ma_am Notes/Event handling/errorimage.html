@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function imgError() {
+  alert('The image could not be loaded.');
+}
+</script>
+</head>
+<body>
+
+<img src="image.gif" onerror="imgError()">
+<p>A function is triggered if an error occurs when loading the image. The function shows an alert box with a text.
+In this example we refer to an image that does not exist, therefore the onerror event occurs.</p>
+
+</body>
+</html>
+

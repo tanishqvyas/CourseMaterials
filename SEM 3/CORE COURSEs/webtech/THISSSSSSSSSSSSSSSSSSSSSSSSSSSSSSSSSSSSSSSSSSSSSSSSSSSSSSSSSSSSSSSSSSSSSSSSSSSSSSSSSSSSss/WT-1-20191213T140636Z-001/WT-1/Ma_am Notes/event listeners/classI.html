@@ -1,0 +1,40 @@
+<html>
+<head>
+<div>
+<img src ="star_off.png" id = "star1">
+<img src ="star_off.png" id = "star2">
+<img src ="star_off.png" id = "star3">
+<img src ="star_off.png" id = "star4">
+<img src ="star_off.png" id = "star5">
+</div>
+</head>
+<body>
+<script>
+var stars=document.getElementsByTagName("div")
+if (stars)
+	{
+	listener()
+	}
+	
+	function listener()
+	{
+	for(var i=0;i<stars.length;stars++)
+	{
+	stars[i].addEventListener("mouseover",glow,false)
+	stars[i].addEventListener("mouseout",unglow,false)
+	}
+	}
+	
+	
+	function glow(e)
+	{
+	e.target.src="star_on.png"
+	}
+	
+	function unglow(e)
+	{
+	e.target.src="star_off.png"
+	}
+	</script>
+	</body>
+	</html>

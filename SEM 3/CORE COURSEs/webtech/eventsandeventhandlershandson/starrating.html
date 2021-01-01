@@ -1,0 +1,108 @@
+<html>
+	<head>
+		<style>
+			div{
+			   width:270px;
+			   height:60px;
+			   border:solid 1px lightblue;
+			
+			}
+					
+			img{
+			
+			  display:inline;
+			  height:50px;
+			  width:50px;
+			  margin 2px;
+			}
+		#menu{
+			display:none;
+			height:100px;
+			width:100px;
+			position:absolute;
+		}
+		#task{
+
+			height:100px;
+			width:100px;
+			position:absolute;
+		}
+		</style>
+	
+	
+	</head>
+	
+	<body>
+		<div id="abc">
+		<img src="star_off.png" id="star_0"/>
+		<img src="star_off.png" id="star_1"/>
+		<img src="star_off.png" id="star_2"/>
+		<img src="star_off.png" id="star_3"/>
+		<img src="star_off.png" id="star_4"/>
+		<div id="menu">
+			<div id="task">Task</div>
+		</div>
+		
+		</div>
+
+	<script type="text/javascript">
+		
+		function register()
+		{
+
+		
+
+
+			var maal = document.querySelectorAll("[src='star_off.png']");
+
+			for (var i = 0; i <maal.length; i++) 
+			{
+				maal[i].addEventListner("mousemove",glow(),false);
+				maal[i].addEventListner("mouseout",unglow(),false);
+				maal[i].addEventListner("click",rate(),false);
+				maal[i].addEventListner("dbclick",unrate(),false);
+			}
+
+		}
+
+
+		function glow(event) 
+		{
+			event.target.src="star_off.png";
+			var index = getIndexOf(event.target);
+
+			for (var i = 0; i < index; i++)
+			{
+				maal[i].src = "star_on.png";
+			}
+		}
+
+		function unglow(event) 
+		{
+			event.target.src="star_on.png";
+			var index = getIndexOf(event.target);
+
+			for (var i = 0; i < index; i++)
+			{
+				maal[i].src = "star_off.png";
+			}
+		}
+		
+
+		function rate() 
+		{
+	
+		}
+
+		function unrate() 
+		{
+	
+		}
+
+	</script>	
+	</body>
+
+
+
+
+</html>

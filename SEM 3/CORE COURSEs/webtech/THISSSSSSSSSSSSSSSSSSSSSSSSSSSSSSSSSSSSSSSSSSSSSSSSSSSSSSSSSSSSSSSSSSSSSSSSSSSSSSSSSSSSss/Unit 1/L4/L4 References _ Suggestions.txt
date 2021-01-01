@@ -1,0 +1,6 @@
+Reference: Sebasta and few other sources
+*Please make sure you explain the relevance of GET and POST
+* Also briefly explain the relevance of action attribute. Tell students it will be reintroduced while teaching PHP
+*Please stress the importance of the 'name'attribute
+* Also explain the importance of giving common name to attribute for checkboxes and radio buttons
+*After completing HTML5 input types please demo on firefox as well. Some input types are not supported on firefox

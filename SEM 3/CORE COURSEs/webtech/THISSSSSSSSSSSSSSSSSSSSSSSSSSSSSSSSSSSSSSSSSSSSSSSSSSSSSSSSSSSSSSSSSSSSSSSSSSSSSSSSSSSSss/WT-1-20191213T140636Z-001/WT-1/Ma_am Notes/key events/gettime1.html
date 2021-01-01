@@ -1,0 +1,20 @@
+<html>
+<head>
+<title> how far u stay in the document </title>
+</head>
+<script>
+var seconds = 0
+function startTimer()
+{
+window.setTimeOut(updateTime, 3000)
+}
+function updateTime()
+{
+++seconds
+  document.getElementById("sofar").innerHTML= seconds
+  }
+  </script>
+  <body onload = "startTimer()">
+  <p id = "sofar">0</p>
+  </body>
+  </html>

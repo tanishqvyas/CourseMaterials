@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bubble</title>
+    </head>
+    <style>
+        body * 
+        {
+            margin: 10px;
+            border: 1px solid blue;
+        }
+    </style>
+    
+    <body>
+
+        <form onclick="func3()">FORM
+            <div onclick="func2()">DIV
+                  <p onclick="func1(event)">Para</p>
+            </div>
+        </form>
+
+        cancel Bubble ? <input type="checkbox" id="check">
+          
+        <script type="text/javascript">
+            
+
+
+            function func1(event)
+            {
+                if(document.getElementById("check").checked)
+                {
+                    event.cancelBubble = true;
+                }
+                alert("para");
+            }
+
+
+            function func2()
+            {
+                alert("div");
+            }
+
+            function func3() 
+            {
+                alert("form");
+            }
+        </script>
+        
+
+    </body>
+    </html>
+    
+
+
+
+
+
+
+
+    
