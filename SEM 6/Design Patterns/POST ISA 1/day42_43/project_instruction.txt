@@ -1,0 +1,25 @@
+Design Pattern Project: 20 points
+
+possible idea:
+- Implement a design pattern in  non OO domain
+- Implement in a lang not supporting that concept directly
+
+
+Team size : 2 (may be 3 if the team can convince me)
+Language : no bar 
+
+- proposal : state problem statement and language of implementation
+
+- assessment : any time before the end of ESA
+	give a demonstration (max 15 min)
+	will ask you to modify in next couple of hours
+	give another demonstration
+
+- deliverables:
+	code
+	readme file - 100 to 200 lines
+	catalog : 2 pages
+	
+	
+	
+

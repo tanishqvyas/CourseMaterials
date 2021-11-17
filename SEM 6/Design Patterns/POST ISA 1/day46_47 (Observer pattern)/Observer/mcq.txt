@@ -1,0 +1,15 @@
+get_state call on subject in Observer required dynamic_cast.
+which of the following is not correct?
+
+providing get_state in abstract subject class would couple subject to concrete subject
+can be avoided if concrete subject is stored in Observer object
+require dynamic_cast to upcast in the hierarchy *
+client getting state and passing this to each observer is not a good idea
+
+which of the following is true?
+adding a new observer affects the subject
+observer depends on the subject and subject does not depend on the observer*
+Implementation of pure virtual functions in abstract subject class is a bad idea
+The function disp should get_state each time before displaying
+
+

@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  rmq:
+    image: rabbitmq:3.8.3-alpine
+
+
+  consumer:
+    build:
+      context: receive  
+      dockerfile: Dockerfile
+
+    command: sh -c "sleep 15 && python receive.py"
+
+    links:
+      - rmq
+
+    depends_on:
+      - rmq
+    restart: on-failure
+
+#Add the Producer service below

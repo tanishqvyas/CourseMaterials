@@ -1,0 +1,14 @@
+Design Patterns : day 46-47 : 30th March 2021
+
+So far,
+GOF patterns:
+	singleton
+	iterator
+	decorator
+	adaptor
+	abstract factory
+	factory method*
+	
+-------------------------------
+
+

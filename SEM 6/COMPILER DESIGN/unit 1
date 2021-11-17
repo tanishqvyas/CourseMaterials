@@ -1,0 +1,21 @@
+Compilation process
+
+1. front end
+2. mid end
+3. back end
+
+grace hopper : coined term compiler
+IBM labs : Corrodo Bohm : wrote 1st compiler
+
+{
+	
+types of compilers :
+
+1. transpiler
+2. cross compiler
+3. self hosting/bootstraping/self compiling (in C compiler is written in C itself)
+4. de-compiler
+5. Incremental compiler
+}
+
+Just in time compiler ??

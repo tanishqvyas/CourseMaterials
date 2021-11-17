@@ -1,0 +1,10 @@
+What does this mean?
+Subject is not coupled with Observer. Observer is coupled with the subject.
+
+Why should notify be in the abstract subject class and not in concrete subject class?
+
+Why should update on Observer send the subject to it?
+
+Can the Observer hold the subject as a variation so that the update on Observer
+	does not send the subject?
+	

@@ -1,0 +1,9 @@
+Why we should inherit stack from vector?
+Distinguish between different ways of implementing stack from vector
+	inheritance and composition
+	multiple inheritance
+	only composition
+	generic composition
+	
+What is private inheritance? How does this differ from public inheritance?
+

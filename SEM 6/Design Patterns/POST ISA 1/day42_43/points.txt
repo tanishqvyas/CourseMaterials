@@ -1,0 +1,34 @@
+Design Patterns : day 42-43 : 23rd March 2021
+so far,
+Singleton
+Iterator
+Decorator
+-------------
+Adaptor : 
+interfaces do not match
+- names
+- parameter list
+- avoid reinventing every wheel
+intent:
+adapter pattern is a software design pattern (also known as wrapper, an alternative naming shared with the decorator pattern) that allows the interface of an existing class to be used as another interface.[1] It is often used to make existing classes work with others without modifying their source code.
+
+make a stack using vector which exists
+
+
+adaptor:
+1. class adaptor
+	template <class T, class Container = deque<T> > class stack;
+	template <class T, class Container = deque<T> > class queue;
+
+2. function adaptor :
+	bind
+	
+3. iterator adaptor
+	const_iterator
+	reverse_iterator
+
+
+
+
+---------------------------
+

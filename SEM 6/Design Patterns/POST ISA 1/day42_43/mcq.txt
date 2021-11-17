@@ -1,0 +1,16 @@
+C++ STL adaptors use
+
+Composition with no inheritance
+Composition with inheritance
+Multiple inheritance
+none of these
+
+
+We can not implement queue using vector because
+
+vector does not support pop_front
+vector does not support push_front
+vector does not support virtual functions
+none of these
+
+

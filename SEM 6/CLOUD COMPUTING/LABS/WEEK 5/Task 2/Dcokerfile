@@ -1,0 +1,6 @@
+FROM ubuntu:18.04
+RUN apt-get update
+RUN apt-get install gcc -y
+COPY myprogram.c myprogram.c
+RUN gcc myprogram.c
+CMD ["./a.out"]

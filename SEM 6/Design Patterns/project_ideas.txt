@@ -1,0 +1,225 @@
+Implicit Invocation
+-------------------
+
+Three type of relationships between components.
+
+1. Name dependence 
+    - Often due to usage of a component in other
+      component. Usage may be of different kinds.    
+    - Leads to coupling, component cannot be 
+      compiled, linked, tested, etc without having
+      all other components on which it is name 
+      dependent. 
+    - Introduces an order on software development
+      process, impacting the parallelism. 
+
+2. Call Relationship
+    - A calls a method on component B. Often to 
+      get a subtask completed.
+    - One cause of name dependence.
+
+3. Invoke Relationships
+    - A and B are in invoke relationship iff A's 
+      execution is eventually followed by B.
+
+Example: Network protocol stack
+
+Functionality: Send/receive message
+
+Components involved: Protocol Stack, Send Mail 
+Daemon, httpd (collectively called applications)
+
+Design goals: Application can be name dependent
+on protocol stack, but protocol stack cannot be 
+name dependent on application. Why?
+
+- Sending is straightforward, application calls the
+  send method on the protocol stack, passing the 
+  message to be sent, receives a status code.
+
+- Receiving a little complicated, application/protocol
+  stack doesn't know when somebody else out there
+  will send a message.
+
+- Alternative designs:
+  > Have protocol stack call application, when 
+    it gets the message, but that violates our 
+    design goal. 
+  > Have protocol stack set a status variable, when it
+    receives the message. The application continuously 
+    observes the value of the status variable. Retrieves
+    the message, when it is set. Requires constant 
+    polling, which is not very efficient
+
+
+Event-Based Implicit Invocation Systems:
+----------------------------------------
+ 
+    - Components provide operations as well as events (Announcers)
+
+    - Other components can register with events
+
+    - Announcers notify all registrants when event occurs
+
+    - Notification happens "implicitly" in that there is no 
+      name dependence from the notifying component to the 
+      notified component 
+
+    - Constraints: 
+
+         > Announcers do not know about which component might
+           be affected by the event
+
+    - Advantages:
+      
+         > Significant Reuse: Introduce a component in the system
+           by just registering with the event of interest
+
+         > Eases Evolution: Announcers are not dependent on the 
+           registrants, so registrants can be replaced without any
+           impact on announcers
+
+    - Disadvantages:
+
+         > Component relinquishes control 
+
+         > Exchange of data
+
+         > Reasoning about correctness becomes a problem
+
+    - Example: Consider a debugger, an editor, variable watcher 
+          Event: A breakpoint is reached in component debugger
+          Interested party: editor, variable watcher
+          Action on event: Scroll to line #, Refresh the value
+                           of variables
+
+    - Example: Consider a compiler, an editor, and a task list 
+          Event: An error in compilation in component compiler
+          Interested party: editor, task list
+          Action on event: Highlight the construct that has error,
+                           add the error to task list
+                           of variables
+
+
+
+
+
+PIPE-FILTER ARCHITECTURE
+------------------------
+ 
+   - Each components has a set of inputs and outputs
+  
+   - Reads input streams and produces output stream
+
+   - Often functionality requires local transformation
+
+   - Constraints: 
+
+        > Filters are independent, i.e. do not share states
+        
+        > Do not know the identity of other filters upstream and downstream
+
+   - Advantages:
+      
+        > Allows to study system as a composition of behaviors of 
+          individual filters
+
+        > Support reuse
+
+        > Easy to maintain and enhance these systems 
+
+        > Naturally support concurrent execution
+
+   - Disadvantages: 
+
+        > Often lead to batch organization of processing, not
+          good at handling interactive applications
+
+        > An overly general format for input and output data 
+          format is required       
+
+        > The system is as slow as the slowest filter
+
+    - Example: Consider the unix utilities ls and wc 
+          Components: ls and wc
+          Can be connected by pipe: ls | wc -l
+          ls generates output, wc takes the ls�s output as 
+          input processes it and generates output
+
+    - Exercise: Analyze ls and wc with respect to the 
+                advantages and disadvantages of pipe-filter
+                systems. 
+
+
+    - Example: Consider a typical compiler
+                 - Consists of scanner, parser, semantic 
+                   analyzer, code generator
+                 - Output of each component is the input 
+                   of the next component
+                 - The components make assumptions about 
+                   the input, so not an ideal pipe-filter
+                   system. 
+
+
+
+
+
+Link for below 2 DPs
+
+courses.cecs.anu.edu.au/courses/archive/comp2110.2008/lectures/lec22.pdf
+
+Null Object
+-----------
+Intent: Provide a surrogate for another object that shares the same
+interface but does nothing. The Null Object encapsulates the
+implementation decisions of how to “do nothing” and hides those details
+from its collaborators.
+
+Sometimes a class that requires a collaborator does not need the collaborator to do anything.
+Yet, the class wishes to treat a collaborator that does nothing the same way it treats one that
+actually provides behavior.
+A typical situation when a method (a DB query, say) is expected to return (a reference to) an
+object, on which then another method will be invoked. If the original method may return the
+null the code which invokes the object method should add check that the returned object is
+not null , or the object fetching method should throw an exception instead of returning null .
+Either way — the code becomes ugly and error prone, the design worsens etc.
+The solution — define class hierarchies consisting of real objects and null objects.
+
+The use of the Null Object DP results in
+the code which is not ugly or convoluted,
+and design which does not deteriorates or
+becomes brittle.
+
+Quite often, the Null Object class is defined
+as Singleton. But despite the similarity, it is
+not a P (intent is different).
+
+
+Generation Gap
+-------------
+Intent: Modify or extend generated code once no
+matter how many times it is regenerated.
+
+Applicability: the Generation Gap pattern is useful when all the following is true
+• Code is generated automatically
+• Generated classes usually aren’t integrated into existing class hierarchies
+• Generated code can be encapsulated in one or more classes
+• Regenerated code usually retains the inteface and instance variables of the previous
+generation
+
+
+
+Active Object : a concurrency pattern
+-------------
+
+decouping method calling from method execution
+https://stackoverflow.com/questions/41676343/explain-active-object-pattern
+
+https://www.topcoder.com/thrive/articles/Concurrency%20Patterns%20-%20Active%20Object%20and%20Monitor%20Object
+
+
+https://www.codeproject.com/Articles/991641/Revisiting-the-Active-Object-Pattern-with-Cplusplu
+
+
+
+A bit hard due to use of scheduling and OS level management involved.

@@ -1,0 +1,9 @@
+services:
+  pycode:
+    build: .
+    links:
+      - mongodb
+  mongodb:
+    image: mongo
+    ports:
+      - 27017

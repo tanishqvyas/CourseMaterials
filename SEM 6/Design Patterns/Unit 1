@@ -1,0 +1,113 @@
+idiom in C ?
+construct in a language ? : straight forward | no special semantics
+idion : uses the construct directly and has some special semantics based on the context
+beyond this : pattern | rich semantics
+
+binary search on an ordered list ?
+ - log(n) comp ?
+ - will this have linear traversals ?
+ - do we require a doubly linked list ?
+
+
+
+phase : functionality
+pass : going over src code or modified version of it
+
+How to run programs in C ?
+
+Phase and not pass : 
+
+	1. write the program and get a src file. (.c file)
+	2. pre-process : translation unit (output)
+	3. Input to compiler is translation unit. Then output from compiler is object file.
+	4. Linker : puts number of object files together and libraries. Output of linker is loadable image.
+	5. this is then loaded and transfered to memory of PC and then we get a process and then we run the program.
+
+
+# serving each food item is phase, and walking through leaves is pass
+# get container with multi parts : 
+
+
+usually a pass has multiple phases
+
+nm filename.o
+
+# : pre processor directive ( a few r compiler directive pragma)
+const, constexpr
+
+introduce variable from command line using -D : i.e we r defining a preprocessor variable
+
+```
+gcc -DB=20 -c apple.c
+```
+
+
+#################################### DAY 3 ########################################3
+
+
+PRE PROCESSOR 
+
+#define A 10
+
+table created at pre processing stage
+conditional updates in pre processor var ?
+pre processor does not understand scope
+try cyclic or relational # defines : recursive , cascaded
+virtual memory : helps relocation easy 
+#if 0
+
+#endif
+
+#if 1
+
+#endif
+
+
+
+
+HIJACKING ?
+
+
+
+
+
+
+
+
+##################### unit 2 ##############333
+
+
+rsolution order for func or that stuff ukwim
+book keeping
+
+grounding function
+virtual funcs
+friend func
+constructor
+destructor
+copy constructor
+member initilization list in C++
+program compilation process and commands
+
+
+whenever we use inheritance with derived class constructor is non trivial we make destructor of base class virtual. Implied that derived class destrctr also virtual
+
+upcasting ---> derived class to base class type --> trivial
+down casting ---> base to derived ---> kuch hota hai
+
+vtable
+
+operator function
+
+static keyword
+
+
+
+
+##################################### 23 Feb ###############33333
+
+
+
+##################################### POST ISA 1 ###############33333
+
+virtual func

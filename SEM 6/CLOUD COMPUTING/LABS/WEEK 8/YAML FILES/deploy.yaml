@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+#Specifies the kind of resource we are creating
+kind: Deployment
+#Metadata to identify the deployment in the cluster
+metadata:
+  name: mynginx
+#Specifications of the deployment
+spec:
+  #The number of replicas the deployment must have
+  replicas: 2
+  #Metadata to identify the replicaset in the cluster
+  selector:
+    matchLabels:
+      app: mynginx
+  template:
+    metadata:
+      labels:
+        app: mynginx
+    # Pod specs
+    spec:
+      containers:
+      - name: mynginx
+        image: nginx:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+

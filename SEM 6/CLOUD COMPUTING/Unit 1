@@ -1,0 +1,46 @@
+############################# Unit 3 #############################################
+
+
+Distributed storgae
+
+
+1. Storage Devices
+	- HDD
+	- SSD
+	- disk latency & terminologies
+
+2. Storage Architecture
+
+	- DAS (Directl attached storage)
+	- NAS (Network attached storage)
+	- SAN (Storage area network)
+
+3. File Systems
+
+	3.1 LVM (logical volume manager)
+	3.2 ubuntu commands :
+		- pvs : list all physical volumes
+		- vgs : list out vol groups
+		- lvs : list out logical volumes
+
+	3.3 File Allocation Table
+
+
+4. Storage Virtualization
+	
+	4.1 Categories
+			4.1.1 File Level
+					- Lustre Architecture
+					- GlustreFS Architecture
+						- AFR (Automatic file replication) translator
+						- Types of Volumes
+						* What is mount point ?
+
+			4.1.2 Block Level
+
+					- Host Based
+					- Storage Based
+					- Network level
+
+
+

@@ -1,0 +1,77 @@
+Design Patterns : days 28-29 : 18th Feb 2021
+
+
+-------------------
+SOLID :
+- guidelines and not rules
+- S : single responsibility principle
+		one and only reason to change
+- O : open and close
+		entity designed should be open for extension and closed for modification
+- L : Liskov's substitution 
+		replace base class object by derived class object
+		interface of the class
+		base class : foo(int n); //  10 <= n <= 20
+		precondition : satisfied by the client
+		derived class : foo(int n);  // stronger : range shrinks : 12  <= n <= 15 ??
+									 //  weaker : 0 <= n <= 30
+		pre condition : derived class cannot have a stronger condtion than the base
+						class
+						
+						
+		post condition : server guarantees te client
+		base class : int foo(); // 10 .. 20
+		derived class : int foo(); // stronger : 12 .. 15
+									// weaker : 0 .. 30
+		deried class cannot have a weaker condition than the base class 							
+		invariant: should remain same in both base and derived class
+		
+		class Base
+		{
+			public:
+			Base* foo();
+		};
+		class Derived : public Base
+		{
+			public:
+			Derived* foo();
+		};
+		covariance return type: C++ and Java; not in C#
+		
+		Base* caller(Base *p)
+		{
+			return p->foo();
+		}
+		Base b; Derived d;
+		Base *res_ptr;
+		res_ptr = caller(&b);
+		res_ptr = caller(&d);
+		
+		contravariant return type?
+		covariant parameter type?
+		contravariant parameter type?
+		
+		check: https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)
+		
+		apple "is a" fruit
+		what about bag of apple "is a" bag of fruit?
+		
+- I : Interface seggregation
+		should you be tied to an interface which you do not require?
+		exception: ATM : design pattern FACADE
+		
+- D : Dependency Inversion
+		layered architecture: TCP/IP OSI
+		
+		class A depends on class B 
+		class B depends on class C
+		...
+		do not have dependence on concrete classes
+		depend on only abstract classes
+		
+		
+------------------------
+
+
+
+
