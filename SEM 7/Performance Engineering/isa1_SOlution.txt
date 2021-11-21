@@ -1,0 +1,118 @@
+1.
+algo is_sorted(a[0 .. n-1])
+sorted <-  true
+i <- 0
+while sorted and (i < (n - 1) ) do
+	j <- i + 1
+	while sorted and (j < n) do
+		sorted = a[i] < a[j]
+		j <- j + 1
+	i <- i + 1
+return sorted
+
+a) does the algo correctly check whether the array is sorted
+   in non-descending order? 
+b) what is the worst case time complexity of this algorithm?
+c) Rewrite the algorithm to make it better.
+
+ans:
+a) NO. relational operator should be <=
+   sorted = a[i] <= a[j]
+b) complexity of this algo is quadratic in n
+c) we can make it linear in n.
+algo is_sorted(a[0 .. n-1])
+sorted <-  true
+i <- 0
+while sorted and (i < (n - 1) ) do
+		sorted = a[i] < a[i + 1]
+		i <- i + 1
+return sorted
+
+2.
+This is the algorithm for insertion sort.
+algo insertion_sort(a[0 .. n-1])
+for i <- 1 to n - 1 do
+	j <- i - 1
+	while j >= 0 and a[j] > a[j + 1] do
+		swap a[j], a[j + 1]
+		j <- j - 1
+	
+	
+i) can you rewrite to reduce the # of swaps?
+   Remember that each swap is effectively 3 assignments.
+ii)if the first pass is a selection sort to find the minimum
+   and exchange with the first element, can we drop the comparison
+   j >= 0 in the inner loop?
+iii) would that affect the stability of the algorithm?
+
+ans:
+a)
+algo insertion_sort(a[0 .. n-1])
+for i <- 1 to n - 1 do
+	key <- a[j]
+	j <- i - 1
+	while j >= 0 and a[j] > a[j + 1] do
+		a[j + 1] <- a[j]
+		j <- j - 1
+	a[j + 1] <- key
+	 
+b)
+yes.
+c) yes.
+
+3.
+int what(int n)
+{
+	int res;
+	int max_count = 0; int count;
+	for(int m = 1; m <= n; ++m)
+	{
+		for(int i = 1; i <= m; ++i)
+		{
+			count = 0;
+			if(m % i == 0)
+			{
+				++count;
+			}
+		}
+		if(count > max_count)
+		{
+			max_count = count; res = m;
+		}
+	}
+	return res;
+}
+a) This function returns an integer between 1 and n which has the
+highest number of factors.
+check the correctness. Indicate the error.
+b) What happens if the expression of it statement is changed to
+count >= max_count?
+c) replace lines 73-76 by a single assignment statement.
+ans:
+a) count should be initialized in the outer loop and not inner loop
+b) if two numbers have the same # of factors, this would give 
+the higher of the two numbers
+c) count += (m % i == 0);
+
+4.
+Apply Bentley's technique to count the # of comparisons in 
+	mergesort. Let merge return a random number between the least
+	and max # of comparisons. Assume that n is a power of 2.
+	- indicate the least value and highest value merge could return.
+	
+int msort(int a[], int n)
+{
+	return msort(___) + msort(__) + merge(___);
+}
+int merge(int m)
+{
+	return ______;
+}
+ans:
+	n/2  n/2 n
+	(m - 1) - m/2 => m/2 - 1
+	rand() % (m/2 - 1) + m/2
+	highest value : m - 1
+	least value : m/2
+	
+	
