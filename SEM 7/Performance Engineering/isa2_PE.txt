@@ -1,0 +1,227 @@
+
+1.
+This is a variation of Lomuto's partition:
+void myswap(int *x, int *y)
+{
+	int temp = *x; *x = *y; *y = temp;
+}
+int partition(int a[], int l, int r)
+{
+	int i = l;
+	while(i <= r)
+	{
+		if(a[i] == 0 && a[r] != 0)
+		{
+			myswap(&a[i], &a[r--]);
+		}
+		else if(a[r] == 0)
+		{
+			r--;
+		}
+		else
+		{
+			i++;
+		}
+	}
+	return i; 
+}
+Given array has elements logically deleted by putting 0.
+This program is supposed to partition such that all non 0 elements are in the 
+left partition.
+a) What is the exact # of iterations if l = 0 and r = 9. [1]
+b) Why should we check if a[r] == 0 before swapping? [2]
+c) Would this algorithm work if all the elements are 0? [2]
+ans:
+a) 10
+b) otherwise 0 would end up on the left partition
+c) yes
+
+2.
+This is a function to process a list using a binary callback.
+The number of elements is known.  
+int what(node_t* temp, int init, int (*op)(int, int))
+{
+	while(temp)
+	{
+		init = op(init, temp->key_);
+		temp = temp->link_;
+	}
+	return init;
+}
+To support loop unrolling, a dummy node is added to the tail of the list with a pointer
+to itself. If a few extra operations are performed, result should not change.
+What shall be the key in the sentinel node if the operation is
+a) addition of keys
+b) multiplication of keys
+c) biggest element in the list
+d) all elements are odd
+e) check if sequence sorted in non descending order
+Hint : sentinel value should not affect the result.
+
+ans:
+a) 0
+b) 1
+c) maximum value in the implementation
+d) any odd number
+e) maximum value in the implementation
+
+3. 
+// find # of substring starting from vowel and # of substrings
+// starting from a consonant.
+// Assume that all characters are lower case letters of English
+// return 0 if both the counts are same, negative integer if
+// vowel_count is less than consonant_count, positive integer
+// otherwise.
+
+// string has characters from s[0] to s[n - 1]
+int compare_count(char s[], int n) // n : number of characters
+{
+	int vowel_count = 0;
+	int consonant_count = 0;
+	for(int i = 0; i < n; ++i)
+	{
+		for(int j = i + 1; j < n; ++j)
+		{
+			if(a[i] == 'a' || a[i] == 'e' || a[i] == 'i' ||
+				a[i] == 'o' || a[i] == 'u')
+			{
+				++vowel_count;
+			}
+			else
+			{
+				++consonant_count;
+			}
+		}
+	}
+	if(vowel_count == consonant_count)
+		return 0;
+	else if(vowel_count < consonant_count)
+		return -1;
+	else
+		return 1;
+}
+a) This is buggy. substrings of some particular length are not
+counted. Find the bug. Indicate the correctness.
+b) Optimize and remove the inner loop
+
+ans:
+a) sub strings of length 1 are missed; inner loop should start
+   with j = i;
+b) 	for(int i = 0; i < n; ++i)
+	{
+			if(a[i] == 'a' || a[i] == 'e' || a[i] == 'i' ||
+				a[i] == 'o' || a[i] == 'u')
+			{
+				vowel_count += (n - i);
+			}
+			else
+			{
+				consonant_count += (n - i)
+			}
+	}
+
+4.
+// array a[1 .. n] not ordered
+// Assume that n is even.
+// selection_sort: sort in non-decreasing order
+void selection_sort(int a[], int n)
+{
+	for(int i = 1; i < n; ++i)
+	{
+		int pos = i; int val = a[i];
+		for(int j = i + 1; j < n; ++j)
+		{
+			if(a[j] < val)
+			{
+				val = a[j];
+				pos = j;
+			}
+		}
+		swap(&a[pos], &a[i]);
+	}
+}
+a) claim : sorts in non-decreasing order
+find bug if any and correct ( with min change of code)  [1]
+b) find min and second_min each time in the loop to reduce the number of iterations.
+Assume that the number of elements is even. [4]
+ans:
+a) No.
+// j < n changed to j <= n
+b) 
+void selection_sort(int a[], int n)
+{
+	for(int i = 1; i < n; i += 2)
+	{
+		int min = a[i]; int pos_min = i;
+		int min2 = a[i + 1]; int pos_min2 = i + 1;
+		if(min > min2)
+		{
+			swap(&min, &min2);
+			swap(&pos_min, &pos_min2);
+		}
+ 
+		for(int j = i + 2; j <= n; ++j)
+		{
+			if(a[j] < min)
+			{
+				min2 = min;
+				pos_min2 = pos_min;
+				min = a[j];
+				pos_min = j;
+			}
+			else if(a[j] < min2)
+			{
+				min2 = min;
+				pos_min2 = pos_min;
+			}
+		}
+		swap(&a[pos_min], &a[i]);
+		swap(&a[pos_min2], &a[i + 1]);
+	}
+}
+
+5. Answer in a line or two.
+a) What is the purpose of using header node and tailer node in a list? [2]
+b) What is the difference between loop unrolling and loop jamming? [2]
+c) 
+ans:
+a) make insertion code simple and faster
+   make searching faster
+b) You are given that r is the index of the lowerbound of value v in an array
+   a[0 .. n - 1]. Assume that the elements of the array arranged in not decreasing order.
+   What test condition would you write to check this? Do consider the leftmost element
+   being the lower bound. [3]
+	r == 0 && a[r] == v
+	r != 0 && a[r] == v && a[r - 1] < v
+6.
+a) 
+replace the code below by a single assignment with arithmetic operators. Do not
+use ternary operator [2]
+if(x > y)
+   s = n;
+else
+   s = 0;
+b) what technique these indicate? Answer in a line or two. [3]
+i) replace sqrt(x) by x?
+ii) replace swap(x, y) with the code int t = x; x = y; y = temp;
+iii) s1 = <expr1>
+     s2 = <expr2>
+     if s1 + s2 > <expr3>
+     	<do something> // does not involve s1 or s2
+     	
+     replace with
+     s1 = <expr1>
+     if s1 > <expr3>
+     	<do simething> // does not involve s1 or s2
+     else
+     	s2 < expr2>
+     	if s1 + s2 > <expr3>
+      		<do something> // does not involve s1 or s2
+     	
+
+ans:
+a) s = n * (x > y);
+b)
+i) strength reduction	
+ii) inline code expansion
+iii) short ckt eval
